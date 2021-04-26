@@ -1,31 +1,39 @@
 {
-    "users": [
-        {
-          "email": "davidedarden83@gmail.com",
-          "name": "David Darden",
-          "id": 1,
-          "image": "dd.jpg",
-          "bio": "I am focused on web development, data analysis, and data visualization. I have a broad range of professional experiences that gives me a unique perspective when solving and analyzing problems. I work well in a team and can adapt to new challenges. I was a soldier for seven years and an art teacher for three years. I have a bachelor’s degree in Art History and a Bachelor of Business Administration in Information Systems & Analytics from MTSU. I am currently attending Nashville Software School's Web Development Bootcamp. I am developing my programming skills and feel that I can learn new processes quickly. I find that success comes through relationships that encourage collaboration, communication, and results. I take great pride in serving as a trusted advisor to the customer’s technology needs. C# JavaScript React HTML CSS "
-        }
-    ],
-    "collections": [
-        {
-            "id": 1,
-            "userId": 1
-        }
-    ],    
-    "backgrndimgs": [
-                {
-                    "id": 1,
-                    "collectionId": 1,
-                    "backgrndimg" : "________________"
-                }
-            ],
-    "imgelements": [
-                {
-                    "id": 1,
-                    "collectionId": 1,
-                    "imgelement" : "________________"
-                }
-    ]
+  "users": [
+    {
+      "email": "davidedarden83@gmail.com",
+      "firstName": "David",
+      "lastName": "Darden",
+      "userName": "Composer1",
+      "id": 1,
+      "image": "panda.png"
+    },
+    {
+      "email": "bob@barker.com",
+      "name": "Bob Barker",
+      "userName": "The Host",
+      "image": "panda.png",
+      "id": 2
+    }
+  ],
+  "collections": [
+    {
+      "id": 1,
+      "userId": 1
+    }
+  ],
+  "backgrndimgs": [
+    {
+      "id": 1,
+      "collectionId": 1,
+      "backgrndimg": "________________"
+    }
+  ],
+  "imgelements": [
+    {
+      "id": 1,
+      "collectionId": 1,
+      "imgelement": "________________"
+    }
+  ]
 }

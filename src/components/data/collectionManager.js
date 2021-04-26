@@ -1,4 +1,4 @@
-const remoteURL = "http://localhost:3000"
+const remoteURL = "http://localhost:8088"
 
 export const getAllCollections = () => {
     return fetch(`${remoteURL}/collections`)
