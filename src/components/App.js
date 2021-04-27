@@ -4,7 +4,7 @@ import { Route, Redirect } from "react-router-dom"
 import './App.css';
 import { ApplicationViews } from "./ApplicationViews"
 import { Register } from "./auth/Register"
-import { render } from "./nav/NavBurgerMenu";
+import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login"
 
 
@@ -21,27 +21,11 @@ import { Login } from "./auth/Login"
 // export default App;
 
 export const App = () => (
-  <>
-    <Route
-      render={() => {
-        if (sessionStorage.getItem("nation_user")) {
-          return (
-            <>
-              <render />
+          <>
+              <NavBar />
               <ApplicationViews />
-            </>
-          )
-        } else {
-          return <Redirect to="/login" />;
-        }
-      }}
-    />
-
-    <Route path="/login">
-      <Login />
-    </Route>
-    <Route path="/register">
-      <Register />
-    </Route>
-  </>
+          </>
 )
+          
+  
+   
