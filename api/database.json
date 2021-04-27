@@ -6,34 +6,42 @@
       "lastName": "Darden",
       "userName": "Composer1",
       "id": 1,
-      "image": "panda.png"
+      "img": "panda.png"
     },
     {
       "email": "bob@barker.com",
       "name": "Bob Barker",
       "userName": "The Host",
-      "image": "panda.png",
+      "img": "panda.png",
       "id": 2
     }
   ],
   "collections": [
     {
       "id": 1,
-      "userId": 1
+      "userId": 1,
+      "img": "panda-x.png",
+      "collectionTitle": "Collection Title 1"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "img": "panda.png",
+      "collectionTitle": "Collection Title 2"
     }
   ],
   "backgrndimgs": [
     {
       "id": 1,
       "collectionId": 1,
-      "backgrndimg": "________________"
+      "backgrndimg": "citystreet.jpg"
     }
   ],
   "imgelements": [
     {
       "id": 1,
       "collectionId": 1,
-      "imgelement": "________________"
+      "imgelement": "panda.png"
     }
   ]
 }
