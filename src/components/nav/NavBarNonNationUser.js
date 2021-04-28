@@ -3,11 +3,17 @@ import { Link } from "react-router-dom"
 // import "bootstrap/dist/css/bootstrap.min.css"
 import "./NavBar.css"
 
-export const NavBar = () => {
+export const NavBar2 = () => {
   return (
       <ul className="navbar">
           <li className="navbar__item active">
               <Link className="navbar__link" to="/">Home</Link>
+          </li>
+          <li className="navbar__item">
+              <Link className="navbar__link" to="/Login">Sign-In</Link>
+          </li>
+          <li className="navbar__item">
+              <Link className="navbar__link" to="/Register">Register</Link>
           </li>
           <li className="navbar__item">
               <Link className="navbar__link" to="/About">About</Link>
@@ -15,9 +21,7 @@ export const NavBar = () => {
           <li className="navbar__item">
               <Link className="navbar__link" to="/Contacts">Contacts</Link>
           </li>
-          <li className="navbar__item">
-              <Link className="navbar__link" to="/Profile">Profile</Link>
-          </li>
+          
       </ul>
   )
 }
