@@ -5,6 +5,9 @@ import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import { About } from "./aboutSection/about"
 import { Contact } from "./contactSection/contact"
+import { Logo } from "./logoSection/logo"
+import { Profile } from "./profileSection/profile"
+import { UploadImage } from "./uploadSection/upload"
 
 export const ApplicationViews = () => {
   return (
@@ -13,6 +16,7 @@ export const ApplicationViews = () => {
 
       <Route exact path="/">
         <div>NEW IMAGE NATION</div>
+        <Logo />
         <CollectionList />
       </Route>
 
@@ -31,6 +35,12 @@ export const ApplicationViews = () => {
       <Route exact path="/contacts">
         <Contact />
       </Route>
+
+      <Route exact path="/profile">
+        <Profile />
+        <UploadImage />
+      </Route>
+
     </>
   );
 };

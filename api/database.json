@@ -28,6 +28,42 @@
       "userId": 2,
       "img": "panda.png",
       "collectionTitle": "Collection Title 2"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "img": "panda-x.png",
+      "collectionTitle": "Collection Title 3"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "img": "panda.png",
+      "collectionTitle": "Collection Title 4"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "img": "panda-x.png",
+      "collectionTitle": "Collection Title 5"
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "img": "panda.png",
+      "collectionTitle": "Collection Title 6"
+    },
+    {
+      "id": 7,
+      "userId": 7,
+      "img": "panda-x.png",
+      "collectionTitle": "Collection Title 7"
+    },
+    {
+      "id": 8,
+      "userId": 8,
+      "img": "panda.png",
+      "collectionTitle": "Collection Title 8"
     }
   ],
   "backgrndimgs": [

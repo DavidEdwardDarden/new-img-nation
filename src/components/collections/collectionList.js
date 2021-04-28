@@ -29,7 +29,7 @@ export const CollectionList = () => {
 
 return (
   
-    <div>
+    <div className="cardList">
       {collections.map(collection =>
       <CollectionCard key={collection.id} collection={collection}/>
       )
