@@ -69,8 +69,20 @@
   "backgrndimgs": [
     {
       "id": 1,
-      "collectionId": 1,
-      "backgrndimg": "citystreet.jpg"
+      "collectionId": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": "3",
+      "collectionId": "1",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619813885/cloudinary-images/ckqwje2wusqv1gnwrnhq.webp"
+    },
+    {
+      "id": "17",
+      "collectionId": "1",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619813952/cloudinary-images/hleafepxackoam9hodai.jpg"
     }
   ],
   "imgelements": [
