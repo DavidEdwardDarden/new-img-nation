@@ -6,7 +6,7 @@ import { getAllBackgrndimgs } from "../../data/uploadManager"
 
 export const BackgrndimgsList = () => {
     // The initial state is an empty array
-  const[backgrndimgs, setBkgrndImg] = useState({
+const[backgrndimgs, setbackgrndimg] = useState({
       id: "", 
       collectionId: "", 
       backgrndimg: "",
@@ -19,7 +19,7 @@ export const BackgrndimgsList = () => {
         getAllBackgrndimgs()
         .then(bkgrndImgsFromAPI => {
         
-          setBkgrndImg(bkgrndImgsFromAPI)
+          setbackgrndimg(bkgrndImgsFromAPI)
         });
       };
 
@@ -30,7 +30,7 @@ useEffect(() => {
     getBkgrndImgs();
   }, []);
 
-
+console.log(backgrndimgs)
 
 return (
   

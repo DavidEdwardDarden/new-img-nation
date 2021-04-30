@@ -19,7 +19,7 @@ export const getAllBackgrndimgs = () => {
 // }
 
 export const addBackgrndimgs = (newimage) => {
-    return fetch(`${remoteURL}/backgrndimages/`, {
+    return fetch(`${remoteURL}/backgrndimgs/`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

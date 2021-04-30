@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {BackgrndimgsList} from "./uploadList"
+import { addBackgrndimgs } from "../../data/uploadManager"
 
 export const UploadImage = () => {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
-
+  const[backgrndimgs, setbackgrndimg] = useState({})
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -23,18 +24,20 @@ export const UploadImage = () => {
 
 const file = await res.json();
 
-console.log(file)
+// console.log(file)
 
 setImage(file.secure_url)
+console.log(image)
 
-
+setbackgrndimg(  {
+collectionId: "2", 
+imgurl: image})
 //--------------------------------------------------
 
+addBackgrndimgs(backgrndimgs)
 
-const saveBkgrndImg = () => {
-  BackgrndimgsList(image)
-  // setImage(file.secure_url)
-}
+  // BackgrndimgsList(image)
+
 //--------------------------------------------------
 setLoading(false)
 
@@ -59,7 +62,6 @@ setLoading(false)
     )
 }
 
-     
     </div>
   );
 };
