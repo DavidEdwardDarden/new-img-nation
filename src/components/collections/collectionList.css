@@ -1,0 +1,14 @@
+.cardList{
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: wrap;
+    justify-content: center;
+    /* column-count: 3 */
+    /* columns: small; */
+    /* display: flex;
+    justify-content: space-between; */
+    /* display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%; */
+    }

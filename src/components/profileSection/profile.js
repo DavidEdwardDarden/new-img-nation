@@ -47,3 +47,4 @@ const {userId} = useParams();
 }
 //another way to make the image work
 // {user.img && <img src= {require(`../images/${user.img}`).default} alt="user img"></img>}
+// {user.img ? <img src= {require(`../images/${user.img}`).default} alt="user img"></img> : <p>Image not found</p>}

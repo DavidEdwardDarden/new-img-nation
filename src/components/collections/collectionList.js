@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { CollectionCard } from './collectionCard';
 import { getAllCollections, deleteCollection} from '../../data/collectionManager';
 // import {handleDeleteCollection} from "./collectionList"
+import "./collectionList.css"
 
 
 export const CollectionList = () => {
