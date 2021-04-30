@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {BackgrndimgsList} from "./uploadList"
 
 export const UploadImage = () => {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
+
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -24,13 +26,25 @@ const file = await res.json();
 console.log(file)
 
 setImage(file.secure_url)
+
+
+//--------------------------------------------------
+
+
+const saveBkgrndImg = () => {
+  BackgrndimgsList(image)
+  // setImage(file.secure_url)
+}
+//--------------------------------------------------
 setLoading(false)
+
+
 
   };
 
   return (
     <div className="Upload">
-      <h1>Upload Image</h1>
+      <h1>Upload a Background Image</h1>
       <input
         type="file"
         name="file"
@@ -49,3 +63,6 @@ setLoading(false)
     </div>
   );
 };
+// {user.img && <img src= {require(`../images/${user.img}`).default} alt="user img"></img>}
+// {user.img ? <img src= {require(`../images/${user.img}`).default} alt="user img"></img> : <p>Image not found</p>}
+
