@@ -14,7 +14,9 @@ console.log("here comes a collection test:")
     <section className="collection">
         <div>
         <h4>{collection.collectionTitle}</h4>
-            <img src= {require(`../images/${collection.img}`).default} alt="collection"></img>
+        <a href="/profile">
+            <img className="brdrme" src= {require(`../images/${collection.img}`).default} alt="collection"></img>
+        </a>
         {/* <h2>{collection.user.name}</h2> */}
         {/* <h3>email:</h3>
         <h4>{collection.user.email}</h4> */}

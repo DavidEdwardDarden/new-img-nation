@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
 
-import "./Login.css"
+import "./Register.css"
 
 export const Register = () => {
 
@@ -39,7 +39,7 @@ export const Register = () => {
                             email: registerUser.email,
                             name: `${registerUser.firstName} ${registerUser.lastName}`,
                             userName:registerUser.userName,
-                            image: "panda.png"
+                            img: "panda-x.png"
                         })
                     })
                         .then(res => res.json())
@@ -59,35 +59,40 @@ export const Register = () => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="centerme" style={{ textAlign: "center" }}>
 
             <dialog className="dialog dialog--password" open={conflictDialog}>
                 <div>Account with that email address already exists</div>
                 <button className="button--close" onClick={e => setConflictDialog(false)}>Close</button>
             </dialog>
 
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">REGISTER</h1>
-                <fieldset>
+            <form className="formuplogin" onSubmit={handleRegister}>
+                <h1 className="gry">REGISTER</h1>
+                <fieldset className="designme" >
                     <label htmlFor="firstName"> First Name </label>
                     <input type="text" name="firstName" id="firstName" className="form-control" placeholder="First name" required autoFocus value={registerUser.firstName} onChange={handleInputChange} />
                 </fieldset>
-                <fieldset>
+                <fieldset className="designme">
                     <label htmlFor="lastName"> Last Name </label>
                     <input type="text" name="lastName" id="lastName" className="form-control" placeholder="Last name" required value={registerUser.lastName} onChange={handleInputChange} />
                 </fieldset>
-                <fieldset>
+                <fieldset className="designme">
                     <label htmlFor="inputEmail"> Email address </label>
                     <input type="email" name="email" id="email" className="form-control" placeholder="Email address" required value={registerUser.email} onChange={handleInputChange} />
                 </fieldset>
-                <fieldset>
+                <fieldset className="designme">
                     <label htmlFor="userName"> User Name </label>
                     <input type="text" name="userName" id="userName" className="form-control" placeholder="User name" required autoFocus value={registerUser.userName} onChange={handleInputChange} />
                 </fieldset>
-                <fieldset>
+                <fieldset className="designme">
                     <button type="submit"> Submit </button>
                 </fieldset>
             </form>
+            <div className="redbox">
+                
+                Welcome to the NEW IMAGE NATION. After you register, you will get to see everyone's creations and make your own.
+                
+            </div>
         </main>
     )
 }

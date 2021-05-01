@@ -1,4 +1,46 @@
+ /* *{
+	border:1px black solid;
+ }  */
+
 .dialog {
     min-width: 15rem;
     min-height: 5rem;
   }
+
+  .btn-5 {
+    background-color: #555555;
+    color: rgb(255, 255, 255);
+    border: solid 1.5px rgb(44, 42, 42)
+  }
+
+  .btn-5:hover{
+    background-color: #828382; /* Green */
+  color: rgb(255, 255, 255);
+  }
+  
+.makegray{
+  color: rgb(53, 52, 52);
+  font-size: 100px;
+  text-shadow: 6px 6px 10px rgb(63, 62, 62);
+}
+
+.container--login{
+ margin: auto;
+  width: 90%;
+  /* border: 3px solid green; */
+  padding: 10px; 
+}
+
+.form--login{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width:1000px; 
+}
+
+.link--register{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+  

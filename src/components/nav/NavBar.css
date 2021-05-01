@@ -1,10 +1,38 @@
 .navbar {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: left;
+  justify-content: center;
+  /* font-weight: bold; */
 }
 
 .navbar__item {
   flex-basis: 20%;
   list-style-type: none;
+}
+
+a:link {
+text-decoration: none;
+font-weight: bold;
+opacity: 0.8;
+}
+
+a:visited {
+  color: rgb(61, 60, 60);
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+a:hover {
+  color: rgb(32, 31, 31);
+  text-decoration: none;
+  text-shadow: 2px 2px 5px rgb(95, 94, 94);
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+a:active {
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.8;
 }

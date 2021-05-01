@@ -9,12 +9,6 @@ export const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
   
 const {userId} = useParams();
-  // const history = useHistory();
-  // const userNum = sessionStorage.getItem("nation_user");
-  // console.log("userNum Follows:");
-  // console.log(userNum);
-  // console.log(getUserById(userNum));
-
   useEffect(() => {
      //getUserById(id) from UserManager and hang on to the data; put it into state
     console.log("useEffect", userId)
@@ -38,9 +32,11 @@ const {userId} = useParams();
 
   return (
    <div>
-     <h2>{user.userName}</h2>
-     {user.img ? <img src= {require(`../images/${user.img}`).default} alt="user img"></img> : <p>Image not found</p>}
-     
+     <h2 className="nationmember"> Nation Member Identification:</h2>
+     <h1 className="usernamelook">{user.userName}</h1>
+     {user.img ? <img src= {require(`../images/${user.img}`).default} className="iconborder" alt="user img"></img> : <p className="centermessage">Image not found</p>}
+     <br/>
+     <br/>
    </div>
   )
     

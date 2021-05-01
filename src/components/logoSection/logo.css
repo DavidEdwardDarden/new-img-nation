@@ -1,0 +1,17 @@
+.logomax{
+    font-size: 600%;
+    text-align: center;
+    color: rgb(49, 49, 49);
+    text-shadow: 6px 6px 10px rgb(63, 62, 62);
+}
+
+.underline{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(46, 45, 45); 
+    height: 2px;
+    background-color:#666;
+    border: 0 none;
+    opacity: 0.5;
+}

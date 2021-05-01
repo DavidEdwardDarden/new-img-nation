@@ -8,6 +8,7 @@ import { Contact } from "./contactSection/contact"
 import { Logo } from "./logoSection/logo"
 import { Profile } from "./profileSection/profile"
 import { UploadImage } from "./uploadSection/upload"
+import { Footer } from "./footerSection/footer"
 
 export const ApplicationViews = () => {
   return (
@@ -15,30 +16,34 @@ export const ApplicationViews = () => {
       {/* Render the component for news articles */}
 
       <Route exact path="/">
-        <div>NEW IMAGE NATION</div>
-        <Logo />
         <CollectionList />
+        <Footer />
       </Route>
 
       <Route exact path="/login">
         <Login />
+        <Footer />
       </Route>
 
       <Route exact path="/register">
         <Register />
+        <Footer />
       </Route>
 
       <Route exact path="/about">
         <About />
-      </Route>
-
-      <Route exact path="/contacts">
         <Contact />
+        <Footer />
       </Route>
 
       <Route exact path="/profile">
         <Profile />
+        <Footer />
+      </Route>
+
+      <Route exact path="/upload">
         <UploadImage />
+        <Footer />
       </Route>
 
     </>

@@ -1,0 +1,14 @@
+.abouttitle {
+color: rgb(59, 58, 58);
+display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
+.parag{
+    margin: 1em;
+    padding: 1em;
+    margin-left: 10em;
+    margin-right: 10em;
+}
