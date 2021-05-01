@@ -6,6 +6,7 @@ import { ApplicationViews } from "./ApplicationViews"
 import { Register } from "./auth/Register"
 import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login"
+import { Logo } from "./logoSection/logo"
 
 
 export const App = () => (
@@ -17,6 +18,7 @@ export const App = () => (
           return (
             <>
               <NavBar />
+              <Logo />
               <ApplicationViews />
             </>
           )

@@ -46,8 +46,9 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>NEW IMAGE NATION</h1>
-                    <h2>SIGN IN</h2>
+                    <br/>
+                    <br/>
+                    <h2 className="makegray" >NEW IMAGE NATION</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
@@ -59,14 +60,15 @@ export const Login = () => {
                             onChange={handleInputChange} />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button className="btn-5" type="submit">
                             SIGN IN
                         </button>
                     </fieldset>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">REGISTER</Link>
+                <br/>
+                <Link to="/register">CLICK HERE TO REGISTER</Link>
             </section>
         </main>
     )

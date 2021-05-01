@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {BackgrndimgsList} from "./uploadList"
 import { addBackgrndimgs } from "../../data/uploadManager"
+import './upload.css';
 
 export const UploadImage = () => {
   const [loading, setLoading] = useState(false);
@@ -46,19 +46,19 @@ setLoading(false)
   };
 
   return (
-    <div className="Upload">
-      <h1>Upload a Background Image</h1>
-      <input
+    <div className="centerme">
+      <h1 className="uploadtitle" >Upload a Background Image</h1>
+      <input className="centerme"
         type="file"
         name="file"
         placeholder="Upload an image"
         onChange={uploadImage}/>
-
+<br/>
 {
     loading?(
-        <h3>Loading...</h3>
+        <h3 className="centerme">Loading...</h3>
     ):(
-        <img src={image} alt="uploadedimage" style={{width:'300px'}}/>
+        <img src={image} className="upldedimg" alt="uploadedimage" style={{width:'300px'}}/>
     )
 }
 

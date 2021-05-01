@@ -1,0 +1,42 @@
+/* .centerme{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width:1000px; 
+} */
+
+.formuplogin{
+    display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center;  */
+  /* min-width:1000px;  */
+  flex-direction: column;
+  /* margin: auto; */
+  /* width: 90%; */
+  /* border: 3px solid green; */
+  padding: 60px;
+  /* text-align: center; */
+}
+
+.link--register{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+  }
+
+.gry{
+    color: rgb(58, 57, 57);
+}
+
+.designme{
+    background-color:rgba(128, 126, 126, 0.5);
+}
+
+.redbox{
+    background-color: rgb(231, 53, 53);
+    color: cornsilk;
+    margin: auto;
+  width: 90%;
+  /* border: 3px solid green; */
+  padding: 30px; 
+}

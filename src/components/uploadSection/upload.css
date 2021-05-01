@@ -1,0 +1,22 @@
+.uploadtitle{
+    text-align: center;
+    color: rgb(49, 49, 49);
+    opacity: 0.6;
+}
+
+.centerme{
+    /* text-align: center; */
+    display: block;
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid green; */
+    padding: 10px;
+}
+
+.upldedimg {
+    display: block;
+    margin: auto;
+    width: 50%;
+    border: 1.5px solid rgb(136, 134, 134);
+    padding: 10px;
+}
