@@ -20,3 +20,27 @@
     border: 1.5px solid rgb(136, 134, 134);
     padding: 10px;
 }
+
+.btn-6 {
+    background-color: #555555;
+    color: rgb(255, 255, 255);
+    border: solid 1.5px rgb(44, 42, 42);
+    display: block;
+    margin: auto;
+    padding: 10px;
+  }
+
+  .btn-6:hover{
+    background-color: #828382; /* Green */
+  color: rgb(255, 255, 255);
+  }
+
+  .redme{
+    background-color: rgb(231, 53, 53);
+    color: cornsilk;
+    margin: auto;
+  width: 90%;
+  /* border: 3px solid green; */
+  padding: 20px;
+  text-align: center;
+  }

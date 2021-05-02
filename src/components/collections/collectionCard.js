@@ -8,8 +8,8 @@ import "./collectionCard.css"
 
 export const CollectionCard = ({collection}) => {
 
-console.log("here comes a collection test:")
-    console.log(collection.img)
+// console.log("here comes a collection test:")
+//     console.log(collection.img)
     return (
     <section className="collection">
         <div>

@@ -9,6 +9,7 @@ import { Logo } from "./logoSection/logo"
 import { Profile } from "./profileSection/profile"
 import { UploadImage } from "./uploadSection/upload"
 import { Footer } from "./footerSection/footer"
+import { ProfileCollectionList } from "./profileSection/profileCollectionList";
 
 export const ApplicationViews = () => {
   return (
@@ -38,6 +39,7 @@ export const ApplicationViews = () => {
 
       <Route exact path="/profile">
         <Profile />
+        <ProfileCollectionList />
         <Footer />
       </Route>
 

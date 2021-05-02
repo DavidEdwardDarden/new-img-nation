@@ -3,6 +3,7 @@ import { getUserById } from '../../data/userManager';
 import { Link, useHistory } from "react-router-dom";
 import "./profile.css"
 import { useParams } from "react-router-dom"
+import { getCollectionByUserId, getAllCollections } from "../../data/collectionManager"
 
 export const Profile = () => {
   const [user, setUser] = useState({userName: "" });
@@ -12,10 +13,9 @@ const {userId} = useParams();
   useEffect(() => {
      //getUserById(id) from UserManager and hang on to the data; put it into state
     console.log("useEffect", userId)
-    const bob=parseInt(sessionStorage.getItem("nation_user"))
-   // const bob=sessionStorage.getItem("nation_user")
-    // console.log(bob)
-    getUserById(bob)
+    const usersId=parseInt(sessionStorage.getItem("nation_user"))
+    
+    getUserById(usersId)
       .then(user => {
         setUser({
           email: user.email,
@@ -26,15 +26,27 @@ const {userId} = useParams();
           img: user.img
         });
         setIsLoading(false);
+        // console.log(getCollectionByUserId(usersId))
+       
       });
+     
   }, [userId]);
+
+  // console.log(user.collection)
+// console.log(getCollectionByUserId(userId))
+// console.log(getCollectionByUserId(usersId))
+// getCollectionByUserId(user.id)
+// console.log(getAllCollections(users.d))
+
 
 
   return (
    <div>
      <h2 className="nationmember"> Nation Member Identification:</h2>
-     <h1 className="usernamelook">{user.userName}</h1>
+     <h1 className="usernamelook">"{user.userName}"</h1>
      {user.img ? <img src= {require(`../images/${user.img}`).default} className="iconborder" alt="user img"></img> : <p className="centermessage">Image not found</p>}
+     <br/>
+     <br/>
      <br/>
      <br/>
    </div>
