@@ -11,6 +11,8 @@ export const Contact = () => {
             <div>Email: davidedarden83@gmail.com</div>
         
       </div>
+      <br/>
+      <br/>
     </section>
   );
 };
