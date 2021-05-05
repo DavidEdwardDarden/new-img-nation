@@ -1,0 +1,14 @@
+
+.brdrme{
+    border: solid 4px rgb(58, 57, 57);
+    /* cursor: pointer; */
+}
+
+
+.brdrme:hover{
+    transform: scale(1.015);
+    }
+
+.replaceMe{
+
+    }

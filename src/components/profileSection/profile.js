@@ -12,7 +12,7 @@ export const Profile = () => {
 const {userId} = useParams();
   useEffect(() => {
      //getUserById(id) from UserManager and hang on to the data; put it into state
-    console.log("useEffect", userId)
+    // console.log("useEffect", userId)
     const usersId=parseInt(sessionStorage.getItem("nation_user"))
     
     getUserById(usersId)

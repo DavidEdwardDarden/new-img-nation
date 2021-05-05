@@ -11,6 +11,7 @@
     width: 50%;
     /* border: 3px solid green; */
     padding: 10px;
+     border:rgb(46, 45, 45) solid 5px;
 }
 
 .centerme2{
@@ -30,15 +31,16 @@
     padding: 10px;
 }
 
-/* #collectionNumber{
+#collectionNumber{
   display: block;
   margin: auto;
-} */
+}
 
-/* .moveright{
-  display: block;
-  margin: auto;
-} */
+.moveright{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 /* .btn-6 {
     background-color: #555555;
@@ -54,7 +56,7 @@
   color: rgb(255, 255, 255);
   } */
 
-  /* .redme{
+  .redme{
     background-color: rgb(231, 53, 53);
     color: cornsilk;
     margin: auto;
@@ -62,4 +64,15 @@
   
   padding: 20px;
   text-align: center;
-  } */
+  }
+
+  .underline{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(46, 45, 45); 
+    height: 2px;
+    background-color:#666;
+    border: 0 none;
+    opacity: 0.5;
+}

@@ -1,9 +1,9 @@
 // get a list of all the logged in user's collections
 import React, { useState, useEffect } from 'react';
-//import the components we will need
-import { CollectionCard } from '../collections/collectionCard';
+import { ProfileCollectionCard } from './profileCollectionCard';
 import { getAllCollections, deleteCollection} from '../../data/collectionManager';
 // import {handleDeleteCollection} from "./collectionList"
+import { useHistory, useParams } from "react-router-dom"
 import "./profileCollectionList.css"
 
 export const ProfileCollectionList = () => {
@@ -27,13 +27,15 @@ export const ProfileCollectionList = () => {
     getCollections();
   }, []);
 
-  //Displays friendCards of logged in user
+  //Displays collectionCards of logged in user
 const collectionCards = () => {
     const allCollectionCards = collections.map(collection => {
-      //if the logged in user's id matches the id of a currentUserId in the friends dataset
+      console.log(collection)
+      //if the logged in user's id matches the id of user with a collection
      if( parseInt(sessionStorage.getItem("nation_user")) === collection.userId){
-       //return the friends that match the friendship
-      return <CollectionCard key={collection.userId} 
+      
+       //return the collections that match the user
+      return <ProfileCollectionCard key={collection.userId} 
     //   handleDeleteFriend={handleDeleteFriend} 
       collection={collection}  />
      }
@@ -43,6 +45,7 @@ const collectionCards = () => {
    } )
    return allCollectionCards
   }
+
 
 return (
   

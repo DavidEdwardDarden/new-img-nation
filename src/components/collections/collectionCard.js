@@ -15,7 +15,7 @@ export const CollectionCard = ({collection}) => {
         <div>
         <h4>{collection.collectionTitle}</h4>
         <a href="/profile">
-            <img className="brdrme" src= {require(`../images/${collection.img}`).default} alt="collection"></img>
+            <img className="brdrme" src= {collection.img} alt="collection"></img>
         </a>
         {/* <h2>{collection.user.name}</h2> */}
         {/* <h3>email:</h3>
