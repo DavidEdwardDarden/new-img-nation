@@ -27,3 +27,23 @@ export const addBackgrndimgs = (newimage) => {
         body: JSON.stringify(newimage)
     }).then(response => response.json())
 }
+
+export const addImgElements = (newimage) => {
+    return fetch(`${remoteURL}/imgelements/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newimage)
+    }).then(response => response.json())
+}
+
+export const addCollectionImg = (newimage) => {
+    return fetch(`${remoteURL}/collections/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newimage)
+    }).then(response => response.json())
+}

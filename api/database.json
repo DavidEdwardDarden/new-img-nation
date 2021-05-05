@@ -33,50 +33,20 @@
     {
       "id": 1,
       "userId": 1,
-      "img": "panda-x.png",
+      "img": "https://res.cloudinary.com/diry15tp3/image/upload/v1620244448/cloudinary-images/xeqbma8f04ugy5tsjhzy.jpg",
       "collectionTitle": "Collection Title 1"
     },
     {
       "id": 2,
       "userId": 1,
-      "img": "panda.png",
+      "img": "https://res.cloudinary.com/diry15tp3/image/upload/v1620244560/cloudinary-images/aqbpdv15zaf2no0ef5rf.jpg",
       "collectionTitle": "Collection Title 2"
     },
     {
       "id": 3,
       "userId": 3,
-      "img": "panda-x.png",
+      "img": "https://res.cloudinary.com/diry15tp3/image/upload/v1620245500/cloudinary-images/donimkwpbao4vz10rk18.jpg",
       "collectionTitle": "Collection Title 3"
-    },
-    {
-      "id": 4,
-      "userId": 4,
-      "img": "panda.png",
-      "collectionTitle": "Collection Title 4"
-    },
-    {
-      "id": 5,
-      "userId": 5,
-      "img": "panda-x.png",
-      "collectionTitle": "Collection Title 5"
-    },
-    {
-      "id": 6,
-      "userId": 6,
-      "img": "panda.png",
-      "collectionTitle": "Collection Title 6"
-    },
-    {
-      "id": 7,
-      "userId": 7,
-      "img": "panda-x.png",
-      "collectionTitle": "Collection Title 7"
-    },
-    {
-      "id": 8,
-      "userId": 8,
-      "img": "panda.png",
-      "collectionTitle": "Collection Title 8"
     }
   ],
   "backgrndimgs": [
@@ -86,180 +56,51 @@
       "id": 1
     },
     {
+      "collectionId": "1",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620242257/cloudinary-images/ozx1gffg1sb5ti5dvora.jpg",
       "id": 2
     },
     {
+      "collectionId": "1",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620242284/cloudinary-images/c94s8fh25rpemyiy6yk4.jpg",
       "id": 3
     },
     {
-      "collectionId": "8",
-      "imgurl": "",
+      "collectionId": "2",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620243422/cloudinary-images/bzn4eqqdyhf9ntkqy5hj.jpg",
       "id": 4
     },
     {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619971031/cloudinary-images/coc4gyanro88zxsroj00.jpg",
+      "collectionId": "2",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620244448/cloudinary-images/xeqbma8f04ugy5tsjhzy.jpg",
       "id": 5
     },
     {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619971041/cloudinary-images/yangdidmjugniumohjis.jpg",
+      "collectionId": 0,
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620244560/cloudinary-images/aqbpdv15zaf2no0ef5rf.jpg",
       "id": 6
     },
     {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619971051/cloudinary-images/uc2jmkalruma1kzldecz.jpg",
+      "collectionId": 0,
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620245280/cloudinary-images/aoufkfx3qqm5xbicwnwy.jpg",
       "id": 7
     },
     {
-      "collectionId": "2",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619971062/cloudinary-images/zhym2ukt3xpfeccedvcm.jpg",
+      "collectionId": 0,
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620245500/cloudinary-images/donimkwpbao4vz10rk18.jpg",
       "id": 8
     },
     {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619971070/cloudinary-images/xrsk9dgb22ybxdynz3et.jpg",
+      "collectionId": "2",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620246439/cloudinary-images/g7hcuijjv0vqjs6qdkud.png",
       "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "imgurl": "",
-      "id": 11
-    },
-    {
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619971270/cloudinary-images/wcnq51bcgtkllrjdowby.jpg",
-      "id": 12
-    },
-    {
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619971278/cloudinary-images/zggwicbdn2pfvskibawe.jpg",
-      "id": 13
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1619971289/cloudinary-images/pwehopxjidyzpxyyjv8p.jpg",
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "",
-      "id": 16
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620056116/cloudinary-images/ygxokinzxlu2ihwjcfwa.jpg",
-      "id": 17
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "",
-      "id": 18
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620058411/cloudinary-images/qzdpergkyudjyedxlhzm.jpg",
-      "id": 19
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620058455/cloudinary-images/i57bkup9udafg6bgxnwc.jpg",
-      "id": 20
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "",
-      "id": 21
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620060886/cloudinary-images/cqcsgmnmrlyjcue17l7u.jpg",
-      "id": 22
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620060910/cloudinary-images/lo249zxd90qa9se6fdvk.jpg",
-      "id": 23
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "",
-      "id": 24
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "",
-      "id": 25
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "",
-      "id": 26
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620063435/cloudinary-images/tbvpsou8mobzab2iwmtc.jpg",
-      "id": 27
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620063475/cloudinary-images/klvlj4zdaay2u6kwtgtn.jpg",
-      "id": 28
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620063489/cloudinary-images/yxm3csaiwiclzdzahx3e.jpg",
-      "id": 29
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "",
-      "id": 30
-    },
-    {
-      "collectionId": "1",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620065780/cloudinary-images/qkvdpehqz3o4zdjgwhtn.jpg",
-      "id": 31
-    },
-    {
-      "collectionId": "3",
-      "imgurl": "",
-      "id": 32
-    },
-    {
-      "collectionId": "3",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620067220/cloudinary-images/uwavdujoacsgb9hsvjsg.jpg",
-      "id": 33
-    },
-    {
-      "collectionId": "2",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620067485/cloudinary-images/yvjcfogpkyct0vhj8gsx.jpg",
-      "id": 34
-    },
-    {
-      "collectionId": "2",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620067497/cloudinary-images/r5dadbwz4akgmltpfg7g.jpg",
-      "id": 35
-    },
-    {
-      "collectionId": "3",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620067509/cloudinary-images/m3ix7byzwipxyc0t8cui.jpg",
-      "id": 36
-    },
-    {
-      "collectionId": "4",
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620067520/cloudinary-images/h1tna7xl4qcineb0fn7p.jpg",
-      "id": 37
     }
   ],
   "imgelements": [
     {
       "id": 1,
       "collectionId": 1,
-      "imgelement": "panda.png"
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620246439/cloudinary-images/g7hcuijjv0vqjs6qdkud.png"
     }
   ]
 }

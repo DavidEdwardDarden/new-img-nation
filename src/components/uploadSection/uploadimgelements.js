@@ -1,18 +1,14 @@
-//This file uploads background images
-import React, { useState, useEffect } from 'react';
-import { addBackgrndimgs } from "../../data/uploadManager"
-import {getCollectionByUserId} from "../../data/collectionManager"
+import React, { useState } from 'react';
+import { addImgElements } from "../../data/uploadManager"
 import './upload.css';
 
 // let collectionId= "";
 
-export const UploadBackgroundImage = () => {
-  //setting state variables here----> "set a state variable"
+export const UploadImageElements = () => {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
-  const[backgrndimgs, setbackgrndimg] = useState({})
-  const[collectionId, setcollectionId] = useState(0)
-  const[collectionOptions, setCollectionOptions] = useState([])
+  const[imgelements, setimgelements] = useState({})
+  const[collections, setcollection] = useState({})
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -20,6 +16,7 @@ export const UploadBackgroundImage = () => {
     data.append("file", files[0]);
     data.append("upload_preset", "newimages");
     setLoading(true);
+
     const res = await fetch(
       "https://api.cloudinary.com/v1_1/diry15tp3/image/upload",
       {
@@ -28,39 +25,26 @@ export const UploadBackgroundImage = () => {
       }
     );
 
-    const file = await res.json();
+const file = await res.json();
 
-    setImage(file.secure_url)
+setImage(file.secure_url)
 
-    setbackgrndimg(  {
-    collectionId: collectionId, 
-    imgurl: file.secure_url})
+setimgelements(  {
+collectionId: collections, 
+imgurl: image})
 
 
-    setLoading(false)
+setLoading(false)
 
   };
 
-  useEffect(() => {
-  
-    getCollectionByUserId(sessionStorage.getItem("nation_user"))
-    .then(
-    (collections)=>{
-    setCollectionOptions(collections)
-    //map over CollectionOptions in JSX
-    }
-    );
-  }, []);
-
-
-
   const setImageToCollection = (collectionId) =>{
-    setcollectionId(collectionId.target.value);
+    setcollection(collectionId.target.value);
   }
 
-  const saveImageToBackgroundImages = () => {
-    //puts the uploaded image in the dataset under backgrndimgs when the user chooses an image file
-    const backGroundImageAsItWillApearInTheDatabase =addBackgrndimgs(backgrndimgs) 
+  const saveImageToImageElements = () => {
+    //puts the uploaded image in the dataset under imgelements when the user chooses an image file
+    const backGroundImageAsItWillApearInTheDatabase =addImgElements(imgelements) 
     if(backGroundImageAsItWillApearInTheDatabase.imgurl === "" || null ){
       return alert("Image unable to upload.")
     }
@@ -68,18 +52,22 @@ export const UploadBackgroundImage = () => {
 
 
 
-console.log(image)
   return (
     <div className="centerme">
-      <h1 className="uploadtitle" >Upload a Background Image</h1>
+      <h1 className="uploadtitle" >Upload a .PNG Image</h1>
+      <h3 className="redme">Make sure your image has a checkered background. 
+      A checkered background indicates transparency. Some images have a fake checkered 
+      background... so be ware!</h3>
       
       <label className="moveright" htmlFor="collectionNumber">Choose a collection to save your image to: </label> 
 
 <select 
 onChange={setImageToCollection} 
 name="collectionNumber" id="collectionNumber">
-{collectionOptions.map(option => 
-   <option value={option.id}>{option.collectionTitle}</option>)}
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
 </select>
 
 <br/>
@@ -106,7 +94,7 @@ name="collectionNumber" id="collectionNumber">
 
 </div>
 <button className="centerme2"
-onClick={saveImageToBackgroundImages}
+onClick={saveImageToImageElements}
 >Submit</button>
      
         <br/>

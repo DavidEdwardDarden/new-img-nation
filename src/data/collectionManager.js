@@ -5,6 +5,11 @@ export const getCollectionByUserId = (userId) => {
     .then(res => res.json())
 }
 
+export const getCollectionByCollectionId = (id) => {
+    console.log(id)
+    return fetch (`${remoteURL}/collections/${id}`)
+    .then(res => res.json())
+}
 
 export const getAllCollections = () => {
     return fetch (`${remoteURL}/collections?_expand=user`)
