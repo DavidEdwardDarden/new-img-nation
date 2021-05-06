@@ -5,7 +5,6 @@ import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import { About } from "./aboutSection/about"
 import { Contact } from "./contactSection/contact"
-import { Logo } from "./logoSection/logo"
 import { Profile } from "./profileSection/profile"
 import { UploadBackgroundImage } from "./uploadSection/upload"
 import { UploadCompositeImage } from "./uploadSection/uploadcompositeimage";
@@ -13,7 +12,6 @@ import {UploadImageElements} from "./uploadSection/uploadimgelements"
 import { Footer } from "./footerSection/footer"
 import { ProfileCollectionList } from "./profileSection/profileCollectionList";
 import { ExpandedProfileCollectionList } from "./profileSection/profileExpandedCollectionList"
-
 
 export const ApplicationViews = () => {
   return (
@@ -57,7 +55,6 @@ export const ApplicationViews = () => {
         <Footer />
       </Route>
 
-     
       <Route exact path="/expandedcollection/:collectionId(\d+)">
        <ExpandedProfileCollectionList />
         <Footer />

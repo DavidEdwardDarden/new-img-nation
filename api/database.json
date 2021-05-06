@@ -34,19 +34,19 @@
       "id": 1,
       "userId": 1,
       "img": "https://res.cloudinary.com/diry15tp3/image/upload/v1620244448/cloudinary-images/xeqbma8f04ugy5tsjhzy.jpg",
-      "collectionTitle": "Collection Title 1"
+      "collectionTitle": "Pete's Playtime"
     },
     {
       "id": 2,
       "userId": 1,
       "img": "https://res.cloudinary.com/diry15tp3/image/upload/v1620244560/cloudinary-images/aqbpdv15zaf2no0ef5rf.jpg",
-      "collectionTitle": "Collection Title 2"
+      "collectionTitle": "Urban Legend"
     },
     {
       "id": 3,
       "userId": 3,
       "img": "https://res.cloudinary.com/diry15tp3/image/upload/v1620245500/cloudinary-images/donimkwpbao4vz10rk18.jpg",
-      "collectionTitle": "Collection Title 3"
+      "collectionTitle": "Hom Tanks"
     }
   ],
   "backgrndimgs": [
@@ -94,13 +94,33 @@
       "collectionId": "2",
       "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620246439/cloudinary-images/g7hcuijjv0vqjs6qdkud.png",
       "id": 9
+    },
+    {
+      "collectionId": 0,
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620258918/cloudinary-images/ap3s5twolcpcfzrjksk0.jpg",
+      "id": 10
+    },
+    {
+      "collectionId": "2",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620310712/cloudinary-images/p62wgx0abb3pj8sxjp2u.png",
+      "id": 11
+    },
+    {
+      "collectionId": "1",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620310738/cloudinary-images/o6hpuaq0n8at2i3u0lfa.png",
+      "id": 12
+    },
+    {
+      "collectionId": "2",
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620312526/cloudinary-images/lyfk3gtxcf2qetcptgzy.png",
+      "id": 13
     }
   ],
   "imgelements": [
     {
       "id": 1,
       "collectionId": 1,
-      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620246439/cloudinary-images/g7hcuijjv0vqjs6qdkud.png"
+      "imgurl": "https://res.cloudinary.com/diry15tp3/image/upload/v1620312526/cloudinary-images/lyfk3gtxcf2qetcptgzy.png"
     }
   ]
 }

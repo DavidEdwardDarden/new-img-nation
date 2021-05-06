@@ -19,7 +19,7 @@ export const ProfileCollectionCard = ({collection}) => {
     return (
     <section className="collection">
         <div>
-        <h4>{collection.collectionTitle}</h4>
+        <h2 className="grayme" >"{collection.collectionTitle}"</h2>
        <Link to={`/expandedcollection/${collection.id}`}>
             <img className="brdrme" src= {collection.img} 
             alt="collection" />

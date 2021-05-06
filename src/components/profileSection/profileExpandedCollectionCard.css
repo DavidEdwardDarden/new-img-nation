@@ -2,6 +2,7 @@
 .brdrme{
     border: solid 4px rgb(58, 57, 57);
     /* cursor: pointer; */
+    box-shadow: 6px 6px 10px rgb(63, 62, 62);
 }
 
 
@@ -11,4 +12,14 @@
 
 .replaceMe{
 
+    }
+
+    .grayme{
+        color:rgb(54, 53, 53)
+    }
+
+    .centertime{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
