@@ -1,64 +1,65 @@
-// get a list of all the logged in user's collections
 import React, { useState, useEffect } from "react";
-//import the components we will need
-import { ProfileCollectionCard } from "./profileCollectionCard";
-import {getAllCollections, deleteCollection, getCollectionByCollectionId} from "../../data/collectionManager";
+import {getAllCollections,deleteCollection,getCollectionByCollectionId} from "../../data/collectionManager";
 import { useHistory, useParams } from "react-router-dom";
 import "./profileCollectionList.css";
-import {getBackgrndimgsByCollectionId, getImgelementsByCollectionId} from "../../data/profileManager";
-
+import {getBackgrndimgsByCollectionId,getImgelementsByCollectionId} from "../../data/profileManager";
 
 export const ExpandedProfileCollectionList = () => {
   const { collectionId } = useParams();
-  const [collection, setCollection] = useState([]);
-    const[imgelements, setImgelements] = useState([]);
-  //   const[backgrndimgs, setBackgrndimgs] = useState([]);
+  const [collection, setCollection] = useState({});
+  const [imgelements, setImgelements] = useState([]);
+  const [backgrndimgs, setBackgrndimgs] = useState([]);
 
   const handleGetCollection = (id) => {
     getCollectionByCollectionId(id).then((response) => {
-      console.log(response);
       setCollection(response);
     });
-    //   getBackgrndimgsByCollectionId(id).then(response => {
-    //     console.log(response)
-    //     setCollection(response)
-    // })
-    getImgelementsByCollectionId(id).then((response) => {
-        console.log(response);
-        setImgelements(response);
-    })
   };
 
-  // console.log(getBackgrndimgsByCollectionId(1));
-  // console.log(getImgelementsByCollectionId(1));
+  const handleGetImgElement = (collectionId) => {
+    getImgelementsByCollectionId(collectionId).then((response) => {
+      setImgelements(response);
+    });
+  };
+
+  const handleGetBackgroundImages = (collectionId) => {
+    getBackgrndimgsByCollectionId(collectionId).then((response) => {
+      setBackgrndimgs(response);
+    });
+  };
 
   useEffect(() => {
     handleGetCollection(collectionId);
-    console.log(collectionId);
   }, [collectionId]);
 
+  useEffect(() => {
+    handleGetImgElement(collectionId);
+  }, [collectionId]);
 
-
-  getCollectionByCollectionId();
-  getImgelementsByCollectionId()
-  // getBackgrndimgsByCollectionId()
-
-
+  useEffect(() => {
+    handleGetBackgroundImages(collectionId);
+  }, [collectionId]);
 
   return (
     <>
-      <div>
-        {/* {collection.img} */}
-    {/* {`./../images/${collection.img}`} */}
+      <div className="centertime">
+        <img className="brdrme" src={collection.img} alt="collection" />
+        <br />
+        <br />
 
-    <img className="brdrme" src={collection.img} 
-            alt="collection" />
+        {imgelements.map((imgelements) => (
+          <img className="brdrme" src={imgelements.imgurl} alt="imgelement" />
+        ))}
 
-        <img className="replaceMe" src= {imgelements.imgurl}
-            alt="imgelement" ></img>
-            {/* <img className="replaceMe" src= {require(`../images/${backgrndimgs.imgurl}`).default} 
-            alt="collection" ></img>  */}
+        <br />
+        <br />
+
+        {backgrndimgs.map((backgrndimgs) => (
+          <img className="brdrme" src={backgrndimgs.imgurl} alt="backgroundimg" />
+        ))}
       </div>
+      <br />
+      <br />
     </>
   );
 };

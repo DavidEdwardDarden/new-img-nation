@@ -13,7 +13,7 @@ export const CollectionCard = ({collection}) => {
     return (
     <section className="collection">
         <div>
-        <h4>{collection.collectionTitle}</h4>
+        <h2>"{collection.collectionTitle}"</h2>
         <a href="/profile">
             <img className="brdrme" src= {collection.img} alt="collection"></img>
         </a>
