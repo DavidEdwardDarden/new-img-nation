@@ -57,6 +57,8 @@ setLoading(false)
       <h3 className="redme">A composite image is the image that you have created and want 
           to share with everyone. It consists of a background image and 
           multiple .png/vector elements that have been combined to create one single image... your composite image.</h3>
+
+        
       <label className="moveright" htmlFor="collectionNumber">Choose a collection to save your image to: </label> 
 
 <select 
