@@ -1,8 +1,8 @@
 //This file uploads background images
-import React, { useState, useEffect } from 'react';
-import { addBackgrndimgs } from "../../data/uploadManager"
-import {getCollectionByUserId} from "../../data/collectionManager"
-import './upload.css';
+import React, { useState, useEffect } from "react";
+import { addBackgrndimgs } from "../../data/uploadManager";
+import { getCollectionByUserId } from "../../data/collectionManager";
+import "./upload.css";
 
 // let collectionId= "";
 
@@ -10,10 +10,12 @@ export const UploadBackgroundImage = () => {
   //setting state variables here----> "set a state variable"
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
-  const[backgrndimgs, setbackgrndimg] = useState({})
-  const[collectionId, setcollectionId] = useState(0)
-  const[collectionOptions, setCollectionOptions] = useState([])
-
+  const [collectionId, setcollectionId] = useState(0);
+  //collection options are html options... <option></option>
+  //each one will represent a collection of the logged in user
+  const [collectionOptions, setCollectionOptions] = useState([]);
+  
+  //This section ia about uploading an image from Cloudinary
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -24,93 +26,116 @@ export const UploadBackgroundImage = () => {
       "https://api.cloudinary.com/v1_1/diry15tp3/image/upload",
       {
         method: "POST",
-        body: data
+        body: data,
       }
     );
-
+    
     const file = await res.json();
-
-    setImage(file.secure_url)
-
-    setbackgrndimg(  {
-    collectionId: collectionId, 
-    imgurl: file.secure_url})
-
-
-    setLoading(false)
-
+    
+    //sets image equal to the image URL
+    setImage(file.secure_url);
+    
+    setLoading(false);
   };
 
+
+
+
   useEffect(() => {
-  
-    getCollectionByUserId(sessionStorage.getItem("nation_user"))
-    .then(
-    (collections)=>{
-    setCollectionOptions(collections)
-    //map over CollectionOptions in JSX
-    }
+    //get all the collections of the logged in user
+    getCollectionByUserId(sessionStorage.getItem("nation_user")).then(
+      (collections) => {
+        //set the collection options to the collections that belong
+        //to the logged in user
+        setCollectionOptions(collections);
+        //set collection id's "default render value", to the id of
+        //the users first collection... this is needed in case 
+        //the user doesn't make a choice on the dropdown
+        setcollectionId(collections[0].id);
+        //then map over CollectionOptions in JSX
+      }
     );
   }, []);
 
 
 
-  const setImageToCollection = (collectionId) =>{
+
+//assigns an image to a collection, by giving it a collection id
+  const setImageToCollection = (collectionId) => {
+    //sets the collection id to the value chosen in the dropdown menu
+    //debugger
     setcollectionId(collectionId.target.value);
-  }
+    console.log("Dropdown Id Selected", collectionId.target.value)
+  };
 
+
+
+
+//Update the state of background image
   const saveImageToBackgroundImages = () => {
-    //puts the uploaded image in the dataset under backgrndimgs when the user chooses an image file
-    const backGroundImageAsItWillApearInTheDatabase =addBackgrndimgs(backgrndimgs) 
-    if(backGroundImageAsItWillApearInTheDatabase.imgurl === "" || null ){
-      return alert("Image unable to upload.")
+    const backgrndimg2save ={
+      collectionId: parseInt(collectionId),
+      imgurl: image,
+    };
+    if (backgrndimg2save.imgurl === "" || null) {
+      alert("Image unable to upload.");
     }
+    else{
+      //puts the uploaded image in the dataset under backgrndimgs when the user chooses an image file
+    addBackgrndimgs(backgrndimg2save);
     }
+  };
 
 
 
-console.log(image)
+
   return (
     <div className="centerme">
-      <h1 className="uploadtitle" >Upload a Background Image</h1>
-      
-      <label className="moveright" htmlFor="collectionNumber">Choose a collection to save your image to: </label> 
+      <h1 className="uploadtitle">Upload a Background Image</h1>
 
-<select 
-onChange={setImageToCollection} 
-name="collectionNumber" id="collectionNumber">
-{collectionOptions.map(option => 
-   <option value={option.id}>{option.collectionTitle}</option>)}
-</select>
+      <label className="moveright" htmlFor="collectionNumber">
+        Choose a collection to save your image to:{" "}
+      </label>
+      <select
+        onChange={setImageToCollection}
+        name="collectionNumber"
+        id="collectionNumber"
+      >
+        {collectionOptions.map((option) => (
+          <option value={option.id}>{option.collectionTitle}</option>
+        ))}
+      </select>
 
-<br/>
+      <br />
 
-<input className="centerme"
+      <input
+        className="centerme"
         type="file"
         name="file"
         placeholder="Upload an image"
-        onChange={uploadImage}/>
+        onChange={uploadImage}
+      />
 
-<br/>
+      <br />
 
-{
-    loading?(
+      {loading ? (
         <h3 className="centerme">Loading...</h3>
-    ):(
-        <img src={image} className="upldedimg" alt="uploadedimage" style={{width:'300px'}}/>
-    
-    )
-}
-<br></br>
+      ) : (
+        <img
+          src={image}
+          className="upldedimg"
+          alt="uploadedimage"
+          style={{ width: "300px" }}
+        />
+      )}
+      <br></br>
 
-<div>
+      <div></div>
+      <button className="centerme2" onClick={saveImageToBackgroundImages}>
+        Submit
+      </button>
 
-</div>
-<button className="centerme2"
-onClick={saveImageToBackgroundImages}
->Submit</button>
-     
-        <br/>
+      <br />
     </div>
-    
   );
 };

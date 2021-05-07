@@ -12,6 +12,7 @@ import {UploadImageElements} from "./uploadSection/uploadimgelements"
 import { Footer } from "./footerSection/footer"
 import { ProfileCollectionList } from "./profileSection/profileCollectionList";
 import { ExpandedProfileCollectionList } from "./profileSection/profileExpandedCollectionList"
+import { CreateNew } from "./createNewSection/createNew"
 
 export const ApplicationViews = () => {
   return (
@@ -50,8 +51,6 @@ export const ApplicationViews = () => {
         <br/>
         <UploadImageElements />
         <br/>
-        <UploadCompositeImage />
-        <br/>
         <Footer />
       </Route>
 
@@ -59,6 +58,10 @@ export const ApplicationViews = () => {
        <ExpandedProfileCollectionList />
         <Footer />
       </Route>
+
+      <Route exact path="/createnew"> 
+        <CreateNew />
+       </Route> 
 
     </>
   );

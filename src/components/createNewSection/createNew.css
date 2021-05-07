@@ -1,0 +1,7 @@
+.senter{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    color:rgb(51, 49, 48);
+    /* background-color:black; */
+}

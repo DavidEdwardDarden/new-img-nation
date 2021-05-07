@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {getAllCollections,deleteCollection,getCollectionByCollectionId} from "../../data/collectionManager";
+import {getAllCollections,deleteCollection,getCollectionByCollectionId, getCollectionByUserId} from "../../data/collectionManager";
 import { useHistory, useParams } from "react-router-dom";
 import "./profileCollectionList.css";
-import {getBackgrndimgsByCollectionId,getImgelementsByCollectionId} from "../../data/profileManager";
+import {deleteBackgrndimgsByBackgroundImageId, getBackgrndimgsByCollectionId,getImgelementsByCollectionId, getBackgrndimgsBybackgroundImgId, getImageElementsByImageElementsIdId} from "../../data/profileManager";
 
 export const ExpandedProfileCollectionList = () => {
   const { collectionId } = useParams();
@@ -28,6 +28,18 @@ export const ExpandedProfileCollectionList = () => {
     });
   };
 
+const handleDeleteBackgroundImages = (id) => {
+  //deletes a background image by the id of the background image 
+  //that the user clicks the delte button under
+  deleteBackgrndimgsByBackgroundImageId(id)
+  .then(
+    handleGetBackgroundImages(id)
+  )
+}
+
+
+
+
   useEffect(() => {
     handleGetCollection(collectionId);
   }, [collectionId]);
@@ -47,16 +59,26 @@ export const ExpandedProfileCollectionList = () => {
         <br />
         <br />
 
-        {imgelements.map((imgelements) => (
-          <img className="brdrme" src={imgelements.imgurl} alt="imgelement" />
-        ))}
-
-        <br />
-        <br />
 
         {backgrndimgs.map((backgrndimgs) => (
+        <div>
           <img className="brdrme" src={backgrndimgs.imgurl} alt="backgroundimg" />
+          <button className="makeMeBig" type="button" onClick={() =>
+             handleDeleteBackgroundImages(backgrndimgs.id)}>Delete</button>
+          </div>
         ))}
+
+        <br />
+        <br />
+
+        {imgelements.map((imgelements) => (
+         <div> 
+          <img className="brdrme" src={imgelements.imgurl} alt="imgelement" />
+          <button className="makeMeBig" type="button" onClick={() =>
+             handleDeleteBackgroundImages(imgelements.id)}>Delete</button>
+          </div>
+        ))}
+
       </div>
       <br />
       <br />
