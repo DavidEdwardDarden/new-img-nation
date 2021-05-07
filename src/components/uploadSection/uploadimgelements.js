@@ -9,7 +9,7 @@ export const UploadImageElements = () => {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
   const [imgelements, setimgelements] = useState({});
-  const [collectionId, setcollectionId] = useState(0);
+  const [collectionId, setcollectionId] = useState("");
   const [collectionOptions, setCollectionOptions] = useState([]);
 
   const uploadImage = async (e) => {

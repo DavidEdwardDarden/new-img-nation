@@ -148,7 +148,7 @@ name="collectionNumber" id="collectionNumber">
       <br />
       <br />
       <br /> */}
-      <h2>hi</h2>
+      <h2 className="senter">UNDER CONSTRUCTION</h2>
     </div> 
   );
 };

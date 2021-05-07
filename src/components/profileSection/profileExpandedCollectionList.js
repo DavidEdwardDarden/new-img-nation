@@ -29,7 +29,6 @@ export const ExpandedProfileCollectionList = () => {
   };
 
 const handleDeleteBackgroundImages = (id) => {
-  // debugger
   //deletes a background image by the id of the background image 
   //that the user clicks the delte button under
   deleteBackgrndimgsByBackgroundImageId(id)
@@ -60,12 +59,6 @@ const handleDeleteBackgroundImages = (id) => {
         <br />
         <br />
 
-        {imgelements.map((imgelements) => (
-          <img className="brdrme" src={imgelements.imgurl} alt="imgelement" />
-        ))}
-
-        <br />
-        <br />
 
         {backgrndimgs.map((backgrndimgs) => (
         <div>
@@ -74,6 +67,18 @@ const handleDeleteBackgroundImages = (id) => {
              handleDeleteBackgroundImages(backgrndimgs.id)}>Delete</button>
           </div>
         ))}
+
+        <br />
+        <br />
+
+        {imgelements.map((imgelements) => (
+         <div> 
+          <img className="brdrme" src={imgelements.imgurl} alt="imgelement" />
+          <button className="makeMeBig" type="button" onClick={() =>
+             handleDeleteBackgroundImages(imgelements.id)}>Delete</button>
+          </div>
+        ))}
+
       </div>
       <br />
       <br />
