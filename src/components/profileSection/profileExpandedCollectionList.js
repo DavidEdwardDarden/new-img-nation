@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {getAllCollections,deleteCollection,getCollectionByCollectionId, getCollectionByUserId} from "../../data/collectionManager";
-import { useHistory, useParams } from "react-router-dom";
+import {getCollectionByCollectionId} from "../../data/collectionManager";
+import { useParams } from "react-router-dom";
 import "./profileCollectionList.css";
-import {deleteBackgrndimgsByBackgroundImageId, getBackgrndimgsByCollectionId,getImgelementsByCollectionId, getBackgrndimgsBybackgroundImgId, getImageElementsByImageElementsIdId} from "../../data/profileManager";
+import {deleteBackgrndimgsByBackgroundImageId, deleteImgElementsByBackgroundImageId, 
+  getBackgrndimgsByCollectionId,getImgelementsByCollectionId} from "../../data/profileManager";
 
 export const ExpandedProfileCollectionList = () => {
   const { collectionId } = useParams();
@@ -12,43 +13,60 @@ export const ExpandedProfileCollectionList = () => {
 
   const handleGetCollection = (id) => {
     getCollectionByCollectionId(id).then((response) => {
+      console.log(response)  //This is coming back CORRECT!
       setCollection(response);
     });
   };
 
   const handleGetImgElement = (collectionId) => {
     getImgelementsByCollectionId(collectionId).then((response) => {
+      console.log(response) //This is coming back WRONG!
       setImgelements(response);
     });
   };
 
   const handleGetBackgroundImages = (collectionId) => {
     getBackgrndimgsByCollectionId(collectionId).then((response) => {
+      console.log(response)  //This is coming back WRONG!
       setBackgrndimgs(response);
     });
   };
 
-const handleDeleteBackgroundImages = (id) => {
+
+const handleDeleteBackgroundImages = (id, collectionId) => {
   //deletes a background image by the id of the background image 
-  //that the user clicks the delte button under
+  //that the user clicks the delete button under
+  debugger
   deleteBackgrndimgsByBackgroundImageId(id)
-  .then(
-    handleGetBackgroundImages(id)
-  )
+  
+    handleGetBackgroundImages(collectionId)
+  
+}
+
+const handleDeleteImageElements = (id, collectionId) => {
+  //deletes a background image by the id of the background image 
+  //that the user clicks the delete button under
+  deleteImgElementsByBackgroundImageId(id)
+  
+    handleGetImgElement(collectionId)
+  
 }
 
 
 
 
   useEffect(() => {
+    console.log(collectionId)
     handleGetCollection(collectionId);
   }, [collectionId]);
 
   useEffect(() => {
+    console.log(collectionId)
     handleGetImgElement(collectionId);
   }, [collectionId]);
 
   useEffect(() => {
+     console.log(collectionId)
     handleGetBackgroundImages(collectionId);
   }, [collectionId]);
 
@@ -64,7 +82,7 @@ const handleDeleteBackgroundImages = (id) => {
         <div>
           <img className="brdrme" src={backgrndimgs.imgurl} alt="backgroundimg" />
           <button className="makeMeBig" type="button" onClick={() =>
-             handleDeleteBackgroundImages(backgrndimgs.id)}>Delete</button>
+             handleDeleteBackgroundImages(backgrndimgs.id, backgrndimgs.collectionId)}>Delete</button>
           </div>
         ))}
 
@@ -75,7 +93,7 @@ const handleDeleteBackgroundImages = (id) => {
          <div> 
           <img className="brdrme" src={imgelements.imgurl} alt="imgelement" />
           <button className="makeMeBig" type="button" onClick={() =>
-             handleDeleteBackgroundImages(imgelements.id)}>Delete</button>
+             handleDeleteImageElements(imgelements.id, imgelements.collectionId)}>Delete</button>
           </div>
         ))}
 
