@@ -6,7 +6,7 @@ export const getCollectionByUserId = (userId) => {
 }
 
 export const getCollectionByCollectionId = (id) => {
-    console.log(id)
+    // console.log(id)
     return fetch (`${remoteURL}/collections/${id}`)
     .then(res => res.json())
 }
