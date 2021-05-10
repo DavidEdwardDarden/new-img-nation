@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import {getCollectionByCollectionId} from "../../data/collectionManager";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "./profileCollectionList.css";
 import {deleteBackgrndimgsByBackgroundImageId, deleteImgElementsByBackgroundImageId, 
-  getBackgrndimgsByCollectionId,getImgelementsByCollectionId} from "../../data/profileManager";
+  getBackgrndimgsByCollectionId,getImgelementsByCollectionId, deleteCollectionById} from "../../data/profileManager";
+
+  
 
 export const ExpandedProfileCollectionList = () => {
   const { collectionId } = useParams();
   const [collection, setCollection] = useState({});
   const [imgelements, setImgelements] = useState([]);
   const [backgrndimgs, setBackgrndimgs] = useState([]);
+
+  const history = useHistory();
 
   const handleGetCollection = (id) => {
     getCollectionByCollectionId(id).then((response) => {
@@ -51,15 +55,26 @@ const handleDeleteBackgroundImages = (id, collectionId) => {
 
 
 const handleDeleteImageElements = (id, collectionId) => {
-  console.log("click")
   //deletes a background image by the id of the background image 
   //that the user clicks the delete button under
-  // debugger
   deleteImgElementsByBackgroundImageId(id)
   
      .then(()=>handleGetImgElement(collectionId))
   
 }
+
+
+const handleDeleteCollection = (id) => {
+  
+  if (window.confirm("Are you sure you want to delete this collection?")){
+  deleteCollectionById(id)
+.then(()=>
+history.push("/profile")
+)
+  }
+}
+
+
 
 
 
@@ -83,6 +98,8 @@ const handleDeleteImageElements = (id, collectionId) => {
     <>
       <div className="centertime">
         <img className="brdrme" src={collection.img} alt="collection" />
+        <button className="centertime2" type="button" onClick={() =>
+             handleDeleteCollection(collection.id)}>DELETE</button>
         <br />
         <br />
 
