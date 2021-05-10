@@ -24,14 +24,12 @@ export const ExpandedProfileCollectionList = () => {
 
   const handleGetImgElement = (collectionId) => {
     getImgelementsByCollectionId(collectionId).then((response) => {
-      // console.log(response) 
       setImgelements(response);
     });
   };
 
   const handleGetBackgroundImages = (collectionId) => {
     getBackgrndimgsByCollectionId(collectionId).then((response) => {
-      // console.log(response) 
       setBackgrndimgs(response);
     });
   };
@@ -74,8 +72,9 @@ history.push("/profile")
   }
 }
 
-
-
+const handleEdit = (collectionTitle) =>{
+  history.push("/edittitle")
+}
 
 
 
@@ -97,6 +96,10 @@ history.push("/profile")
   return (
     <>
       <div className="centertime">
+      <h2 className="grayme" >"{collection.collectionTitle}"</h2>
+      <button className="centertime2" type="button" onClick={() =>
+             handleEdit()}>EDIT COLLECTION TITLE</button>
+        <br />
         <img className="brdrme" src={collection.img} alt="collection" />
         <button className="centertime2" type="button" onClick={() =>
              handleDeleteCollection(collection.id)}>DELETE</button>

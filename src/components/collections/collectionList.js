@@ -1,9 +1,8 @@
 //this is the home page
 //where you view all user's collections of images
 import React, { useState, useEffect } from 'react';
-//import the components we will need
 import { CollectionCard } from './collectionCard';
-import { getAllCollections, deleteCollection} from '../../data/collectionManager';
+import { getAllCollections } from '../../data/collectionManager';
 // import {handleDeleteCollection} from "./collectionList"
 import "./collectionList.css"
 
