@@ -13,42 +13,51 @@ export const ExpandedProfileCollectionList = () => {
 
   const handleGetCollection = (id) => {
     getCollectionByCollectionId(id).then((response) => {
-      console.log(response)  //This is coming back CORRECT!
+      // console.log(response) 
       setCollection(response);
     });
   };
 
   const handleGetImgElement = (collectionId) => {
     getImgelementsByCollectionId(collectionId).then((response) => {
-      console.log(response) //This is coming back WRONG!
+      // console.log(response) 
       setImgelements(response);
     });
   };
 
   const handleGetBackgroundImages = (collectionId) => {
     getBackgrndimgsByCollectionId(collectionId).then((response) => {
-      console.log(response)  //This is coming back WRONG!
+      // console.log(response) 
       setBackgrndimgs(response);
     });
   };
 
 
 const handleDeleteBackgroundImages = (id, collectionId) => {
+  console.log("click")
   //deletes a background image by the id of the background image 
   //that the user clicks the delete button under
-  debugger
+  // debugger
   deleteBackgrndimgsByBackgroundImageId(id)
-  
-    handleGetBackgroundImages(collectionId)
-  
+  //"anonynous function" ()=>
+  .then(()=> handleGetBackgroundImages(collectionId))
+    //"callback function" example:
+  // .then( handleGetBackgroundImages)
+  //"callback function" example:
+  // .then( ()=>handleGetBackgroundImages())
+    
 }
 
+
+
 const handleDeleteImageElements = (id, collectionId) => {
+  console.log("click")
   //deletes a background image by the id of the background image 
   //that the user clicks the delete button under
+  // debugger
   deleteImgElementsByBackgroundImageId(id)
   
-    handleGetImgElement(collectionId)
+     .then(()=>handleGetImgElement(collectionId))
   
 }
 
@@ -78,11 +87,13 @@ const handleDeleteImageElements = (id, collectionId) => {
         <br />
 
 
-        {backgrndimgs.map((backgrndimgs) => (
-        <div>
-          <img className="brdrme" src={backgrndimgs.imgurl} alt="backgroundimg" />
-          <button className="makeMeBig" type="button" onClick={() =>
-             handleDeleteBackgroundImages(backgrndimgs.id, backgrndimgs.collectionId)}>Delete</button>
+        {backgrndimgs.map((backgrndimg) => (
+        <div key={backgrndimg.id} className="centertime">
+          <img className="limit1" src={backgrndimg.imgurl} alt="backgroundimg" />
+          <button className="centertime2" type="button" onClick={() =>
+             handleDeleteBackgroundImages(backgrndimg.id, backgrndimg.collectionId)}>DELETE</button>
+               <br/>
+               <br/>
           </div>
         ))}
 
@@ -90,10 +101,12 @@ const handleDeleteImageElements = (id, collectionId) => {
         <br />
 
         {imgelements.map((imgelements) => (
-         <div> 
-          <img className="brdrme" src={imgelements.imgurl} alt="imgelement" />
-          <button className="makeMeBig" type="button" onClick={() =>
-             handleDeleteImageElements(imgelements.id, imgelements.collectionId)}>Delete</button>
+         <div key={imgelements.id} className="centertime"> 
+          <img className="limit2" src={imgelements.imgurl} alt="imgelement" />
+          <button className="centertime2" type="button" onClick={() =>
+             handleDeleteImageElements(imgelements.id, imgelements.collectionId)}>DELETE</button>
+             <br/>
+             <br/>
           </div>
         ))}
 

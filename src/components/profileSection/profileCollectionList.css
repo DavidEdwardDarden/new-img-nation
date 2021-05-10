@@ -3,6 +3,9 @@
     } */
 
     .makeMeBig{
-        width: 100%;
+        /* width: 10%; */
+        /* display: flex;
+        flex-wrap: nowrap; */
+        /* justify-content: center; */
     }
 

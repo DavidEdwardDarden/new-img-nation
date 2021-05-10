@@ -6,7 +6,7 @@ import { Register } from "./auth/Register";
 import { About } from "./aboutSection/about"
 import { Contact } from "./contactSection/contact"
 import { Profile } from "./profileSection/profile"
-import { UploadBackgroundImage } from "./uploadSection/upload"
+import { UploadBackgroundImage } from "./uploadSection/uploadbackgroundimage"
 import { UploadCompositeImage } from "./uploadSection/uploadcompositeimage";
 import {UploadImageElements} from "./uploadSection/uploadimgelements"
 import { Footer } from "./footerSection/footer"

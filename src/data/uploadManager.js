@@ -47,3 +47,23 @@ export const addCollectionImg = (newimage) => {
         body: JSON.stringify(newimage)
     }).then(response => response.json())
 }
+
+export const addCollection = (newCollection) => {
+    return fetch(`${remoteURL}/collections`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newCollection)
+    }).then(response => response.json())
+}
+
+// export const addAnimal = (newAnimal) => {
+//     return fetch(`${remoteURL}/animals`, {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(newAnimal)
+//     }).then(response => response.json())
+// }
