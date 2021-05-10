@@ -6,8 +6,8 @@ import "./createNew.css";
 export const CreateNew = () => {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
-  const [collectionId, setcollectionId] = useState({});
-
+  const[collection, setCollection] = useState({})
+const[collections, setCollections] = useState([])
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -27,7 +27,7 @@ export const CreateNew = () => {
 
     setImage(file.secure_url);
 
-    setcollectionId({
+    setCollection({
       id: "",
       userId: sessionStorage.getItem("nation_user"),
       img: image,
@@ -37,61 +37,40 @@ export const CreateNew = () => {
     setLoading(false);
   };
 
-  const setImageToACollectionId = (id) => {
-    //SET IMAGE COLLECTION ID to the number of collections the user has PLUS 1
-    //If the user has zero collections... the plus one should make the
-    //collection id be 1
-    setcollectionId(id.target.value);
-  };
+  const handleInputChange = () =>{
 
-//   const saveImageToCollectionImages = () => {
-//     //puts the uploaded image in the dataset under collections when the user chooses an image file
-//     addCollectionImg(collections);
-//   };
+  }
+
+  
+
+  const saveImageToCollectionImages = () => {
+    //puts the uploaded image in the dataset under collections when the user chooses an image file
+    addCollectionImg(collection);
+  };
 
 const someFunction = () => {
     return console.loh("hyellow")
 }
 
+const setImageToACollectionId = (id) => {
+  //SET IMAGE COLLECTION ID to the number of collections the user has PLUS 1
+  //If the user has zero collections... the plus one should make the
+  //collection id be 1
+  
+  setCollections(collections.push(collection));
+};
 
   return (
     <div className="centerme">
-      {/* <hr className="underline"></hr>
-
-
-
-
-
-
-
-
+     
       <form className="formuplogin" onSubmit={someFunction}>
                 <h1 className="gry">Create a TITLE for your Masterpiece.</h1>
                 <fieldset className="designme" >
-                    <label htmlFor="collectionTitle"> Title </label>
-                    <input type="text" name="firstName" id="firstName" className="form-control" placeholder="First name" required autoFocus value={collection.collectionTitle} onChange={handleInputChange} />
+                    <label htmlFor="collectionTitle"> Title: </label>
+                    <input type="text" className="form-control" placeholder="Title Here" required autoFocus value={collection.collectionTitle} onChange={handleInputChange} />
                 </fieldset>
             </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
       <h1 className="uploadtitle">Upload a New Composite Image</h1>
       <h3 className="redme">
         A composite image is the image that you have created and want to share
@@ -107,18 +86,10 @@ const someFunction = () => {
         all of the different parts of your image. (the background and the .png images)
       </h3>
 
-      {/* <label className="moveright" htmlFor="collectionNumber">Choose a collection to save your image to: </label>  */}
+      <label className="moveright" htmlFor="collectionNumber">Choose a collection to save your image to: </label> 
 
-      {/* <select 
-onChange={setImageToACollectionId} 
-name="collectionNumber" id="collectionNumber">
- <option value="1">1</option>
- <option value="2">2</option>
- <option value="3">3</option>
- <option value="4">4</option>
-</select> */}
 
-      {/* <br />
+       <br />
 
       <input
         className="centerme"
@@ -147,8 +118,7 @@ name="collectionNumber" id="collectionNumber">
       </button>
       <br />
       <br />
-      <br /> */}
-      <h2 className="senter">UNDER CONSTRUCTION</h2>
+ 
     </div> 
   );
 };

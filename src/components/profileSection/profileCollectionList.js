@@ -35,7 +35,7 @@ const collectionCards = () => {
      if( parseInt(sessionStorage.getItem("nation_user")) === collection.userId){
       
        //return the collections that match the user
-      return <ProfileCollectionCard key={collection.userId} 
+      return <ProfileCollectionCard key={collection.id} 
     //   handleDeleteFriend={handleDeleteFriend} 
       collection={collection}  />
      }

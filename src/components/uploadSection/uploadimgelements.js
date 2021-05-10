@@ -84,7 +84,7 @@ export const UploadImageElements = () => {
         id="collectionNumber"
       >
         {collectionOptions.map((option) => (
-          <option value={option.id}>{option.collectionTitle}</option>
+          <option key={option.id} value={option.id}>{option.collectionTitle}</option>
         ))}
       </select>
 
