@@ -13,6 +13,7 @@ import { Footer } from "./footerSection/footer"
 import { ProfileCollectionList } from "./profileSection/profileCollectionList";
 import { ExpandedProfileCollectionList } from "./profileSection/profileExpandedCollectionList"
 import { CreateNew } from "./createNewSection/createNew"
+import { EditCollectionTitle } from "./profileSection/editTitle"
 
 export const ApplicationViews = () => {
   return (
@@ -61,6 +62,11 @@ export const ApplicationViews = () => {
 
       <Route exact path="/createnew"> 
         <CreateNew />
+       </Route> 
+
+       <Route exact path="/edittitle"> 
+        <EditCollectionTitle />
+        <Footer />
        </Route> 
 
     </>

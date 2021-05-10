@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { addCollectionImg } from "../../data/uploadManager";
 import "./createNew.css";
 
 export const CreateNew = () => {
@@ -70,7 +69,7 @@ export const CreateNew = () => {
   return (
     <div className="centerme">
       <form className="formuplogin" onSubmit={handleCreateNew}>
-        <h1 className="gry">Create a TITLE for your Masterpiece.</h1>
+        <h1 className="tryit">Create a title for your Composite Image.</h1>
         <fieldset className="designme">
           <label htmlFor="collectionTitle"> Title: </label>
           <input
@@ -107,16 +106,30 @@ export const CreateNew = () => {
     style={{ width: "300px" }}
   />
 )}
-<br />
+
 
         <fieldset className="designme">
                     <button type="submit"> Submit </button>
         </fieldset>
       </form>
+      <h1 className="senter">EXAMPLE:</h1>
+      <img src= {require(`../images/Example1.JPG`).default} className="example" alt="example img"></img>
+      <br />
+     
+      <h3 className="redme">
+        A composite image is the image that you have created and want to share
+        with everyone. It consists of a background image and multiple
+        .png/vector elements that have been combined to create one single
+        image... your composite image.
+      </h3>
 
       <br />
 
-
+      <h3 className="redme">
+        After you upload your composite image... go to the UPLOAD PAGE to upload
+        all of the different parts of your image. (the background and the .png
+        images)
+      </h3>
 
 
 
