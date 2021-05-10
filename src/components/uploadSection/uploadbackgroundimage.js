@@ -15,7 +15,7 @@ export const UploadBackgroundImage = () => {
   //each one will represent a collection of the logged in user
   const [collectionOptions, setCollectionOptions] = useState([]);
   
-  //This section ia about uploading an image from Cloudinary
+  //This section is about uploading an image from Cloudinary
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -40,7 +40,7 @@ export const UploadBackgroundImage = () => {
 
 
 
-
+//sets the state of the collection id 
   useEffect(() => {
     //get all the collections of the logged in user
     getCollectionByUserId(sessionStorage.getItem("nation_user")).then(
@@ -128,7 +128,7 @@ export const UploadBackgroundImage = () => {
           style={{ width: "300px" }}
         />
       )}
-      <br></br>
+      <br />
 
       <div></div>
       <button className="centerme2" onClick={saveImageToBackgroundImages}>
