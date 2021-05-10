@@ -34,6 +34,12 @@ export const deleteImgElementsByBackgroundImageId = (id) => {
     }).then(res => res.json())
 }
 
+export const deleteCollectionById = (id) => {
+    return fetch (`${remoteURL}/collections/${id}`, {
+        method: "DELETE"
+    }).then(res => res.json())  
+}
+
 
 // export const getCollectionByCollectionId = (id) => {
 //     console.log(id)
