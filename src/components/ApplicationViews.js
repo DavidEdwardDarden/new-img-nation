@@ -7,7 +7,6 @@ import { About } from "./aboutSection/about"
 import { Contact } from "./contactSection/contact"
 import { Profile } from "./profileSection/profile"
 import { UploadBackgroundImage } from "./uploadSection/uploadbackgroundimage"
-import { UploadCompositeImage } from "./uploadSection/uploadcompositeimage";
 import {UploadImageElements} from "./uploadSection/uploadimgelements"
 import { Footer } from "./footerSection/footer"
 import { ProfileCollectionList } from "./profileSection/profileCollectionList";
@@ -64,7 +63,7 @@ export const ApplicationViews = () => {
         <CreateNew />
        </Route> 
 
-       <Route exact path="/edittitle"> 
+       <Route exact path="/edittitle/:collectionId(\d+)"> 
         <EditCollectionTitle />
         <Footer />
        </Route> 

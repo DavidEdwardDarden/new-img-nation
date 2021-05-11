@@ -34,21 +34,6 @@
       "userName": "Jimbo",
       "img": "panda-x.png",
       "id": 5
-    },
-    {
-      "userId": "1",
-      "img": "",
-      "id": 6
-    },
-    {
-      "userId": "1",
-      "img": "",
-      "id": 7
-    },
-    {
-      "userId": "1",
-      "img": "",
-      "id": 8
     }
   ],
   "collections": [

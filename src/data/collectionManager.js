@@ -34,12 +34,12 @@ export const addCollections = (newcollections) => {
     }).then(response => response.json())
 }
 
-// export const updateCollection = (editedcollection) =>{
-//     return fetch(`${remoteURL}/employees/${editedcollection.id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(editedcollection)
-//     }).then(data => data.json())
-// }
+export const updateCollection = (editedCollection) =>{
+    return fetch(`${remoteURL}/collections/${editedCollection.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedCollection)
+    }).then(data => data.json())
+}
