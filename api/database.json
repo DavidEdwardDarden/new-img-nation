@@ -34,6 +34,13 @@
       "userName": "Jimbo",
       "img": "panda-x.png",
       "id": 5
+    },
+    {
+      "email": "sam@sam.com",
+      "name": "Sam Samson",
+      "userName": "Sammy",
+      "img": "panda-x.png",
+      "id": 6
     }
   ],
   "collections": [

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getUserById } from '../../data/userManager';
-import { Link, useHistory } from "react-router-dom";
 import "./profile.css"
 import { useParams } from "react-router-dom"
-import { getCollectionByUserId, getAllCollections } from "../../data/collectionManager"
+
 
 export const Profile = () => {
   const [user, setUser] = useState({userName: "" });
-  const [isLoading, setIsLoading] = useState(true);
   
 const {userId} = useParams();
   useEffect(() => {
@@ -25,7 +23,6 @@ const {userId} = useParams();
           id: user.id,
           img: user.img
         });
-        setIsLoading(false);
         // console.log(getCollectionByUserId(usersId))
        
       });

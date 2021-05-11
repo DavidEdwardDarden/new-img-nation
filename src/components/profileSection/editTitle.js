@@ -46,7 +46,7 @@ useEffect(() => {
           setCollection(collection);
           setIsLoading(false);
         });
-    }, []);
+    }, [collectionId]);
 
     return(
         <>
