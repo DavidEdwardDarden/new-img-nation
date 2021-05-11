@@ -1,9 +1,7 @@
 // get a list of all the logged in user's collections
 import React, { useState, useEffect } from 'react';
 import { ProfileCollectionCard } from './profileCollectionCard';
-import { getAllCollections, deleteCollection} from '../../data/collectionManager';
-// import {handleDeleteCollection} from "./collectionList"
-import { useHistory, useParams } from "react-router-dom"
+import { getAllCollections} from '../../data/collectionManager';
 import "./profileCollectionList.css"
 
 export const ProfileCollectionList = () => {

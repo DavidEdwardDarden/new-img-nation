@@ -72,8 +72,9 @@ history.push("/profile")
   }
 }
 
+// console.log(collectionId)
 const handleEdit = (collectionTitle) =>{
-  history.push("/edittitle")
+  history.push(`/edittitle/${collectionId}`)
 }
 
 
