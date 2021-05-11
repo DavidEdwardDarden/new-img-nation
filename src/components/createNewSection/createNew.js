@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import "./createNew.css";
 
 export const CreateNew = () => {
   const [collection, setCollection] = useState({collectionTitle:""});
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
-
-  const history = useHistory();
-
 
   //This section is about uploading an image to/from Cloudinary
   const uploadImage = async (e) => {
