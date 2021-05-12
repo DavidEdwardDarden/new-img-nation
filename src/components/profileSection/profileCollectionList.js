@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { ProfileCollectionCard } from './profileCollectionCard';
 import { getAllCollections} from '../../data/collectionManager';
-import "./profileCollectionList.css"
 
 export const ProfileCollectionList = () => {
     // The initial state is an empty array
@@ -28,7 +27,6 @@ export const ProfileCollectionList = () => {
   //Displays collectionCards of logged in user
 const collectionCards = () => {
     const allCollectionCards = collections.map(collection => {
-      console.log(collection)
       //if the logged in user's id matches the id of user with a collection
      if( parseInt(sessionStorage.getItem("nation_user")) === collection.userId){
       

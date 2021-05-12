@@ -25,7 +25,7 @@ export const Register = () => {
 
     const handleRegister = (e) => {
         e.preventDefault()
-
+        alert("Welcome to The Nation!")
         existingUserCheck()
             .then((userExists) => {
                 if (!userExists) {
@@ -60,7 +60,6 @@ export const Register = () => {
 
     return (
         <main className="centerme" style={{ textAlign: "center" }}>
-
             <dialog className="dialog dialog--password" open={conflictDialog}>
                 <div>Account with that email address already exists</div>
                 <button className="button--close" onClick={e => setConflictDialog(false)}>Close</button>

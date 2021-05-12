@@ -7,7 +7,7 @@ import { About } from "./aboutSection/about"
 import { Contact } from "./contactSection/contact"
 import { Profile } from "./profileSection/profile"
 import { UploadBackgroundImage } from "./uploadSection/uploadbackgroundimage"
-import {UploadImageElements} from "./uploadSection/uploadimgelements"
+import { UploadImageElements } from "./uploadSection/uploadimgelements"
 import { Footer } from "./footerSection/footer"
 import { ProfileCollectionList } from "./profileSection/profileCollectionList";
 import { ExpandedProfileCollectionList } from "./profileSection/profileExpandedCollectionList"
@@ -46,14 +46,6 @@ export const ApplicationViews = () => {
         <Footer />
       </Route>
 
-      <Route exact path="/upload">
-        <UploadBackgroundImage />
-        <br/>
-        <UploadImageElements />
-        <br/>
-        <Footer />
-      </Route>
-
       <Route exact path="/expandedcollection/:collectionId(\d+)">
        <ExpandedProfileCollectionList />
         <Footer />
@@ -61,6 +53,13 @@ export const ApplicationViews = () => {
 
       <Route exact path="/createnew"> 
         <CreateNew />
+        <br/>
+        <UploadBackgroundImage />
+        <br/>
+        <UploadImageElements />
+        <br/>
+        <br/>
+        <Footer />
        </Route> 
 
        <Route exact path="/edittitle/:collectionId(\d+)"> 

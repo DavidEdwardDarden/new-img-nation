@@ -3,6 +3,7 @@ import "./createNew.css";
 
 export const CreateNew = () => {
   const [collection, setCollection] = useState({collectionTitle:""});
+  //loading stuff is usually implement to prevent a button from being pushed a many times in a row
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
 
@@ -31,16 +32,22 @@ export const CreateNew = () => {
 
 
 
-//stolen (and retooled) from Register.js line 13
+//stolen (and retooled) from Register.js line 13 (for reference)
+//Handles Input into text field
+//an "event" can be something the browser does, or something a user does (a button is clicked or an input field is changed)
   const handleInputChange = (event) => {
     //Spread Syntax takes in an iterable (e.g an array) and expands it into individual elements.
     const newCollection = { ...collection };
+    //here, id is referencing (allowing access to) the id of an html object/element
+    //so you are assigning newCollection the value of the accessed input field (aka whatever the user typed in)
     newCollection[event.target.id] = event.target.value;
+    //now you are setting the state of collection to 
+    //the value of newCollection which is set to collection.collectionTitle in the HTML (value=collection.collectionTitle)
     setCollection(newCollection);
   };
 
   
-//also stolen (and retooled) from Register.js
+//also stolen (and retooled) from Register.js (for reference)
   const handleCreateNew = (event) => {
    //prevent refresh of form html element
     event.preventDefault()
@@ -56,18 +63,17 @@ export const CreateNew = () => {
                         })
                     })
                         .then(res => res.json())
-
-
-
-                        
+                            .then(()=>alert("Image will appear under PROFILE section."))
   };
 
   return (
     <div className="centerme">
       <form className="formuplogin" onSubmit={handleCreateNew}>
-        <h1 className="tryit">Create a title for your Composite Image.</h1>
+      <h1 className="steps" >STEP 1</h1>
+      <hr className="underline"></hr>
+        <h3 className="tryit">Create a TITLE for your Composite Image.</h3>
         <fieldset className="designme">
-          <label htmlFor="collectionTitle"> Title: </label>
+          <label className="align" htmlFor="collectionTitle"> TITLE: </label>
           <input
             id="collectionTitle"
             type="text"
@@ -82,6 +88,8 @@ export const CreateNew = () => {
 
         <br />
 
+<h1 className="tryit">Upload your masterpiece.</h1>
+
 <input
   className="centerme"
   type="file"
@@ -92,44 +100,40 @@ export const CreateNew = () => {
 
 <br />
 
-{loading ? (
-  <h3 className="centerme">Loading...</h3>
-) : (
-  <img
-    src={image}
-    className="upldedimg"
-    alt="uploadedimage"
-    style={{ width: "300px" }}
-  />
-)}
+{/* // if image is null and we are not loading then show nothing
+//else if loading is true show loading
+//if image is not null and loading is not true show image */}
 
+{image === "" && !loading ? (
+        ""
+      ) : loading ? (
+        <h3 className="centerme">Loading...</h3>
+      ) : (
+        <img
+          src={image}
+          className="upldedimg"
+          alt="uploadedimage"
+          style={{ width: "300px" }}
+        />
+      )}
+<br />
 
-        <fieldset className="designme">
-                    <button type="submit"> Submit </button>
-        </fieldset>
+       <div className="align">
+                    <button className="button2" type="submit"> Submit </button>
+      </div>
       </form>
-      <h1 className="senter">EXAMPLE:</h1>
-      <img src= {require(`../images/Example1.JPG`).default} className="example" alt="example img"></img>
-      <br />
-     
-      <h3 className="redme">
+
+      {/* <h3 className="redme">
         A composite image is the image that you have created and want to share
         with everyone. It consists of a background image and multiple
-        .png/vector elements that have been combined to create one single
+        .png images, that have been combined to create one single
         image... your composite image.
-      </h3>
+      </h3> */}
 
-      <br />
+      {/* <h1 className="senter">EXAMPLE:</h1>
+      <img src= {require(`../images/Example1.JPG`).default} className="example" alt="example img"></img> */}
+     
 
-      <h3 className="redme">
-        After you upload your composite image... go to the UPLOAD PAGE to upload
-        all of the different parts of your image. (the background and the .png
-        images)
-      </h3>
-
-
-
-      <br />
     </div>
   );
 };

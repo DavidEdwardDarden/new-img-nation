@@ -10,7 +10,8 @@
   .btn-5 {
     background-color: #555555;
     color: rgb(255, 255, 255);
-    border: solid 1.5px rgb(44, 42, 42)
+    border: solid 1.5px rgb(44, 42, 42);
+    border-radius: 8%;
   }
 
   .btn-5:hover{
@@ -25,11 +26,14 @@
 }
 
 .container--login{
- margin: auto;
+  /* display: flex; */
+    /* flex-wrap: nowrap; */
+    justify-content: center;
+  margin: auto;
   width: 80%;
   /* border: 3px solid green; */
   padding: 10px; 
-  
+  border: 0px;
 }
 
 .form--login{
@@ -37,11 +41,26 @@
   flex-wrap: wrap;
   justify-content: center;
   min-width:1000px; 
+  border: 0px;
 }
 
 .link--register{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* width: 100%; */
+  /* float: right; */
 }
-  
+
+.center{
+  /* display: flex;
+  flex-wrap: nowrap; */
+  /* justify-content: center; */
+   border: 0px;
+  /* height: 10%;  */
+  padding: 25px 0;
+}
+
+.fieldset{
+  border: 20px;
+}

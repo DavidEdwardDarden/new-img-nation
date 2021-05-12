@@ -7,7 +7,6 @@ export const getBackgrndimgsByCollectionId = (collectionId) => {
 }
 
 export const getImgelementsByCollectionId = (collectionId) => {
-    console.log(collectionId)
     return fetch (`${remoteURL}/imgelements?collectionId=${collectionId}`)
     .then(res => res.json())
 }
