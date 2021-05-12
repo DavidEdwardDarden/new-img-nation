@@ -10,6 +10,8 @@ export const UploadImageElements = () => {
   const [image, setImage] = useState("");
   const [imgelements, setimgelements] = useState({});
   const [collectionId, setcollectionId] = useState("");
+  //collection options are html options... <option></option>
+  //each one will represent a collection of the logged in user
   const [collectionOptions, setCollectionOptions] = useState([]);
 
   const uploadImage = async (e) => {
@@ -32,17 +34,24 @@ export const UploadImageElements = () => {
 
     setimgelements({
       collectionId: parseInt(collectionId),
-      imgurl: file.secure_url
+      imgurl: file.secure_url,
     });
 
     setLoading(false);
   };
 
+  //sets the state of the collection id
   useEffect(() => {
+    //get all the collections of the logged in user
     getCollectionByUserId(sessionStorage.getItem("nation_user")).then(
       (collections) => {
+        //set the collection options to the collections that belong
+        //to the logged in user
         setCollectionOptions(collections);
-        setcollectionId(collections[0].id);
+        //set collection id's "default render value", to the id of
+        //the users first collection... this is needed in case
+        //the user doesn't make a choice on the dropdown
+        setcollectionId(collections[0]?.id);
         //map over CollectionOptions in JSX
       }
     );
@@ -53,10 +62,9 @@ export const UploadImageElements = () => {
   };
 
   const saveImageToImageElements = () => {
- 
     setimgelements({
       collectionId: parseInt(collectionId),
-      imgurl: image
+      imgurl: image,
     });
 
     //puts the uploaded image in the dataset under imgelements when the user chooses an image file
@@ -64,17 +72,20 @@ export const UploadImageElements = () => {
     if (ImageElementAsItWillApearInTheDatabase.imgurl === "" || null) {
       return alert("Image unable to upload.");
     }
+    alert("Image will appear in PROFILE section under chosen collection.");
   };
 
   return (
     <div className="centerme">
-      <h1 className="uploadtitle">Upload a .PNG Image</h1>
-      <h3 className="redme">
+      <h1 className="steps">STEP 3</h1>
+      <hr className="underline"></hr>
+      <h1 className="uploadtitle">Upload .PNG Images</h1>
+      {/* <h3 className="redme">
         Make sure your image has a checkered background. A checkered background
         indicates transparency. Some images have a fake checkered background...
         so be ware!
-      </h3>
-
+      </h3> */}
+      <br />
       <label className="moveright" htmlFor="collectionNumber">
         Choose a collection to save your image to:{" "}
       </label>
@@ -84,7 +95,9 @@ export const UploadImageElements = () => {
         id="collectionNumber"
       >
         {collectionOptions.map((option) => (
-          <option key={option.id} value={option.id}>{option.collectionTitle}</option>
+          <option key={option.id} value={option.id}>
+            {option.collectionTitle}
+          </option>
         ))}
       </select>
 
@@ -100,7 +113,13 @@ export const UploadImageElements = () => {
 
       <br />
 
-      {loading ? (
+      {/* // if image is null and we are not loading then show nothing
+//else if loading is true show loading
+//if image is not null and loading is not true show image */}
+
+      {image === "" && !loading ? (
+        ""
+      ) : loading ? (
         <h3 className="centerme">Loading...</h3>
       ) : (
         <img
@@ -110,6 +129,7 @@ export const UploadImageElements = () => {
           style={{ width: "300px" }}
         />
       )}
+
       <br></br>
 
       <div></div>

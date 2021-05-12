@@ -13,6 +13,7 @@ export const Contact = () => {
       </div>
       <br/>
       <br/>
+      <br/>
     </section>
   );
 };

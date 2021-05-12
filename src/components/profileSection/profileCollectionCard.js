@@ -1,20 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom"
-import "./profileExpandedCollectionCard.css"
 
 export const ProfileCollectionCard = ({collection}) => {
-
-    // const [backgrndimgs, setBackgrndimgs] = useState({});
-    // const [imgelements, setImgelements] = useState({});
-
-    // const {collectionId} = useParams();
-    // const history = useHistory();
-// console.log(collection)
-//     const handleCollectionClick = () =>{
-// history.push(`/expandedcollection/${collection.id}`)
-//     }
-
-
 
     return (
     <section className="collection">

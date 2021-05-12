@@ -1,6 +1,6 @@
 .uploadtitle{
     text-align: center;
-    color: rgb(49, 49, 49);
+    color: rgb(34, 34, 34);
     opacity: 0.6;
 }
 
@@ -11,7 +11,7 @@
     width: 50%;
     /* border: 3px solid green; */
     padding: 10px;
-     border:rgb(46, 45, 45) solid 5px;
+     border:rgb(83, 81, 81) solid 10px;
 }
 
 .centerme2{

@@ -13,14 +13,16 @@
 a:link {
 text-decoration: none;
 font-weight: bold;
+font-size:130%;
 opacity: 0.8;
 color: rgb(48, 47, 47);
 }
 
 a:visited {
-  color: rgb(61, 60, 60);
+  color: rgb(51, 50, 50);
   text-decoration: none;
   font-weight: bold;
+  font-size:130%;
   opacity: 0.8;
 }
 
@@ -29,11 +31,13 @@ a:hover {
   text-decoration: none;
   text-shadow: 2px 2px 5px rgb(95, 94, 94);
   font-weight: bold;
+  font-size:130%;
   opacity: 0.8;
 }
 
 a:active {
   text-decoration: none;
   font-weight: bold;
+  font-size:130%;
   opacity: 0.8;
 }

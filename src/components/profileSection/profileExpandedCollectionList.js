@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import {getCollectionByCollectionId} from "../../data/collectionManager";
 import { useParams, useHistory } from "react-router-dom";
-import "./profileCollectionList.css";
 import {deleteBackgrndimgsByBackgroundImageId, deleteImgElementsByBackgroundImageId, 
   getBackgrndimgsByCollectionId,getImgelementsByCollectionId, deleteCollectionById} from "../../data/profileManager";
-
-  
+import "./profileExpandedCollectionCard.css"
+// import "./upload.css";
 
 export const ExpandedProfileCollectionList = () => {
   const { collectionId } = useParams();
@@ -80,17 +79,14 @@ const handleEdit = (collectionTitle) =>{
 
 
   useEffect(() => {
-    console.log(collectionId)
     handleGetCollection(collectionId);
   }, [collectionId]);
 
   useEffect(() => {
-    console.log(collectionId)
     handleGetImgElement(collectionId);
   }, [collectionId]);
 
   useEffect(() => {
-     console.log(collectionId)
     handleGetBackgroundImages(collectionId);
   }, [collectionId]);
 

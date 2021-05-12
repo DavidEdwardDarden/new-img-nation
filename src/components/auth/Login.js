@@ -59,7 +59,7 @@ export const Login = () => {
                             value={loginUser.email}
                             onChange={handleInputChange} />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="center">
                         <button className="btn-5" type="submit">
                             SIGN IN
                         </button>
