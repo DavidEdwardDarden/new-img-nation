@@ -10,9 +10,6 @@ export const UploadImageElements = () => {
   const [image, setImage] = useState("");
   const [imgelements, setimgelements] = useState({});
   const [collectionId, setcollectionId] = useState("");
-  //collection options are html options... <option></option>
-  //each one will represent a collection of the logged in user
-  const [collectionOptions, setCollectionOptions] = useState([]);
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -40,7 +37,7 @@ export const UploadImageElements = () => {
     setLoading(false);
   };
 
-  //sets the state of the collection id
+ //sets the state of the collection id and collectionOptions (and re-renders the page when state changes)
   useEffect(() => {
     //get all the collections of the logged in user
     getCollectionByUserId(sessionStorage.getItem("nation_user")).then(
@@ -85,21 +82,6 @@ export const UploadImageElements = () => {
         indicates transparency. Some images have a fake checkered background...
         so be ware!
       </h3> */}
-      <br />
-      <label className="moveright" htmlFor="collectionNumber">
-        Choose a collection to save your image to:{" "}
-      </label>
-      <select
-        onChange={setImageToCollection}
-        name="collectionNumber"
-        id="collectionNumber"
-      >
-        {collectionOptions.map((option) => (
-          <option key={option.id} value={option.id}>
-            {option.collectionTitle}
-          </option>
-        ))}
-      </select>
 
       <br />
 

@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+//I could seperat background images section and image elements section into seperate elements
+//I have chosen not to currently for time
+import React, { useState, useEffect } from "react";
+import { addBackgrndimgs } from "../../data/uploadManager";
+import { addImgElements } from "../../data/uploadManager";
 import "./createNew.css";
+import "../uploadSection/upload.css";
 
 export const CreateNew = () => {
-  const [collection, setCollection] = useState({ collectionTitle: "" });
-  //loading stuff is usually implement to prevent a button from being pushed a many times in a row
+  const [collectiontitle, setCollectionTitle] = useState({ collectionTitle: "" });
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState("");
-
+  const [image1, setImage1] = useState("");
+  const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
+  const [imgelements, setimgelements] = useState({});
+const [newCollectionObject, setNewCollectionObject] = useState();
 
   //This section is about uploading an image to/from Cloudinary
-  const uploadImage = async (e) => {
+  const uploadImage1 = async (e) => {
     const files = e.target.files;
     const data = new FormData();
     data.append("file", files[0]);
@@ -26,23 +33,73 @@ export const CreateNew = () => {
     const file = await res.json();
 
     //sets image equal to the image URL
-    setImage(file.secure_url);
+    setImage1(file.secure_url);
 
     setLoading(false);
   };
+
+
+  //This section is about uploading an image to/from Cloudinary
+  const uploadImage2 = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "newimages");
+    setLoading(true);
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/diry15tp3/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+
+    //sets image equal to the image URL
+    setImage2(file.secure_url);
+
+    setLoading(false);
+  };
+
+  //This section is about uploading an image to/from Cloudinary
+  const uploadImage3 = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "newimages");
+    setLoading(true);
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/diry15tp3/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+
+    //sets image equal to the image URL
+    setImage3(file.secure_url);
+
+    setLoading(false);
+  };
+
+
+
 
   //stolen (and retooled) from Register.js line 13 (for reference)
   //Handles Input into text field
   //an "event" can be something the browser does, or something a user does (a button is clicked or an input field is changed)
   const handleInputChange = (event) => {
     //Spread Syntax takes in an iterable (e.g an array) and expands it into individual elements.
-    const newCollection = { ...collection };
+    const newCollectionTitle = { ...collectiontitle };
     //here, id is referencing (allowing access to) the id of an html object/element
     //so you are assigning newCollection the value of the accessed input field (aka whatever the user typed in)
-    newCollection[event.target.id] = event.target.value;
+    newCollectionTitle[event.target.id] = event.target.value;
     //now you are setting the state of collection to
     //the value of newCollection which is set to collection.collectionTitle in the HTML (value=collection.collectionTitle)
-    setCollection(newCollection);
+    setCollectionTitle(newCollectionTitle);
   };
 
   //also stolen (and retooled) from Register.js (for reference)
@@ -56,16 +113,54 @@ export const CreateNew = () => {
       },
       body: JSON.stringify({
         userId: parseInt(sessionStorage.getItem("nation_user")),
-        img: image,
-        collectionTitle: collection.collectionTitle,
+        img: image1,
+        collectionTitle: collectiontitle.collectionTitle,
       }),
     })
       .then((res) => res.json())
-      .then(() => alert("Image will appear under PROFILE section."))
-      .then(() => window.location.reload())
+      .then((newCollectionObj) =>
+       {
+         setNewCollectionObject(newCollectionObj)
+         console.log(newCollectionObj)
+         alert("Image will appear under PROFILE section.")
+        })
+      //update state
+  };
+
+
+
+
+  //Update the state of background image
+  const saveImageToBackgroundImages = () => {
+    const backgrndimg2save = {
+      collectionId: parseInt(newCollectionObject.id),
+      imgurl: image2
+    };
+    if (backgrndimg2save.imgurl === "" || null) {
+      alert("Image unable to upload.");
+    } else {
+      //puts the uploaded image in the dataset under backgrndimgs when the user chooses an image file
+      addBackgrndimgs(backgrndimg2save);
+    }
+    alert("Image will appear in PROFILE section under chosen collection.");
+  };
+
+  const saveImageToImageElements = () => {
+    const imgelement2save = {
+      collectionId: parseInt(newCollectionObject.id),
+      imgurl: image3
+    };
+    if (imgelement2save.imgurl === "" || null) {
+      alert("Image unable to upload.");
+    } else {
+      //puts the uploaded image in the dataset under backgrndimgs when the user chooses an image file
+      addImgElements(imgelement2save);
+    }
+    alert("Image will appear in PROFILE section under chosen collection.");
   };
 
   return (
+    <div>
     <div className="centerme">
       <form className="formuplogin" onSubmit={handleCreateNew}>
         <h1 className="steps">STEP 1</h1>
@@ -83,7 +178,7 @@ export const CreateNew = () => {
             placeholder="Title Here"
             required
             autoFocus
-            value={collection.collectionTitle}
+            value={collectiontitle.collectionTitle}
             onChange={handleInputChange}
           />
         </fieldset>
@@ -97,7 +192,7 @@ export const CreateNew = () => {
           type="file"
           name="file"
           placeholder="Upload an image"
-          onChange={uploadImage}
+          onChange={uploadImage1}
         />
 
         <br />
@@ -106,19 +201,20 @@ export const CreateNew = () => {
 //else if loading is true show loading
 //if image is not null and loading is not true show image */}
 
-        {image === "" && !loading ? (
+        {image1 === "" && !loading ? (
           ""
         ) : loading ? (
           <h3 className="centerme">Loading...</h3>
         ) : (
           <img
-            src={image}
+            src={image1}
             className="upldedimg"
             alt="uploadedimage"
             style={{ width: "300px" }}
           />
         )}
         <br />
+
 
         <div className="align">
           <button className="button2" type="submit">
@@ -137,6 +233,102 @@ export const CreateNew = () => {
 
       {/* <h1 className="senter">EXAMPLE:</h1>
       <img src= {require(`../images/Example1.JPG`).default} className="example" alt="example img"></img> */}
+    </div>
+<br/>
+
+<div className="centerme">
+<h1 className="steps" >STEP 2</h1>
+<hr className="underline"></hr>
+<h1 className="uploadtitle">Upload a Background Image</h1>
+
+<input
+ className="centerme"
+ type="file"
+ name="file"
+ placeholder="Upload an image"
+ onChange={uploadImage2}
+/>
+
+<br />
+
+{/* // if image is null and we are not loading then show nothing
+//else if loading is true show loading
+//if image is not null and loading is not true show image */}
+
+{image2 === "" && !loading ? (
+ ""
+) : loading ? (
+ <h3 className="centerme">Loading...</h3>
+) : (
+ <img
+   src={image2}
+   className="upldedimg"
+   alt="uploadedimage"
+   style={{ width: "300px" }}
+ />
+)}
+
+<br />
+
+<div></div>
+<button className="centerme2" onClick={saveImageToBackgroundImages}>
+ Submit
+</button>
+
+<br />
+</div>
+<br/>
+
+<div className="centerme">
+      <h1 className="steps">STEP 3</h1>
+      <hr className="underline"></hr>
+      <h1 className="uploadtitle">Upload .PNG Images</h1>
+      {/* <h3 className="redme">
+        Make sure your image has a checkered background. A checkered background
+        indicates transparency. Some images have a fake checkered background...
+        so be ware!
+      </h3> */}
+
+      <br />
+
+      <input
+        className="centerme"
+        type="file"
+        name="file"
+        placeholder="Upload an image"
+        onChange={uploadImage3}
+      />
+
+      <br />
+
+      {/* // if image is null and we are not loading then show nothing
+//else if loading is true show loading
+//if image is not null and loading is not true show image */}
+
+      {image3 === "" && !loading ? (
+        ""
+      ) : loading ? (
+        <h3 className="centerme">Loading...</h3>
+      ) : (
+        <img
+          src={image3}
+          className="upldedimg"
+          alt="uploadedimage"
+          style={{ width: "300px" }}
+        />
+      )}
+
+      <br></br>
+
+      <div></div>
+      <button className="centerme2" onClick={saveImageToImageElements}>
+        Submit
+      </button>
+
+      <br />
+    </div>
+    <br />
+    <br />
     </div>
   );
 };
