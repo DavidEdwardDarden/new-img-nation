@@ -6,13 +6,14 @@ import { Register } from "./auth/Register";
 import { About } from "./aboutSection/about"
 import { Contact } from "./contactSection/contact"
 import { Profile } from "./profileSection/profile"
-import { UploadBackgroundImage } from "./uploadSection/uploadbackgroundimage"
-import { UploadImageElements } from "./uploadSection/uploadimgelements"
 import { Footer } from "./footerSection/footer"
 import { ProfileCollectionList } from "./profileSection/profileCollectionList";
 import { ExpandedProfileCollectionList } from "./profileSection/profileExpandedCollectionList"
 import { CreateNew } from "./createNewSection/createNew"
 import { EditCollectionTitle } from "./profileSection/editTitle"
+import { ForeignProfile } from "./foreignProfileSection/foreignProfile"
+import { ForeignProfileCollectionList } from "./foreignProfileSection/foreignProfileCollectionList"
+import { ForeignExpandedProfileCollectionList } from "./foreignProfileSection/foreignProfileExpandedCollectionList"
 
 export const ApplicationViews = () => {
   return (
@@ -53,12 +54,6 @@ export const ApplicationViews = () => {
 
       <Route exact path="/createnew"> 
         <CreateNew />
-        <br/>
-        <UploadBackgroundImage />
-        <br/>
-        <UploadImageElements />
-        <br/>
-        <br/>
         <Footer />
        </Route> 
 
@@ -67,6 +62,16 @@ export const ApplicationViews = () => {
         <Footer />
        </Route> 
 
+       <Route exact path="/foreignprofile/:userId(\d+)"> 
+        <ForeignProfile />
+        <ForeignProfileCollectionList />
+        <Footer />
+       </Route> 
+
+       <Route exact path="/foreignexpandedcollection/:collectionId(\d+)">
+       <ForeignExpandedProfileCollectionList />
+        <Footer />
+      </Route>
     </>
   );
 };
