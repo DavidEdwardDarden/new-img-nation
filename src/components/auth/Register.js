@@ -59,12 +59,14 @@ export const Register = () => {
     }
 
     return (
-        <main className="centerme" style={{ textAlign: "center" }}>
+     <div>
+         <br/>
+         <br/>
+     <main className="centerme" style={{ textAlign: "center" }}>
             <dialog className="dialog dialog--password" open={conflictDialog}>
                 <div>Account with that email address already exists</div>
                 <button className="button--close" onClick={e => setConflictDialog(false)}>Close</button>
             </dialog>
-
             <form className="formuplogin" onSubmit={handleRegister}>
                 <h1 className="gry">REGISTER</h1>
                 <fieldset className="designme" >
@@ -93,5 +95,6 @@ export const Register = () => {
                 
             </div>
         </main>
+        </div>
     )
 }

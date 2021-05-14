@@ -68,7 +68,7 @@
         /* justify-content: center; */
         /* display: block; */
         margin: 20px;
-        width: 70%;
+        width: 20%;
         height: 40px;
          /* border: 3px solid green; */
         padding: 7px;
@@ -85,7 +85,6 @@
         background-color: #fdad00; /* Green */
         color: rgb(0, 0, 0);
     }
-
 
     .limit1{
         width:95%;
