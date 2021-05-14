@@ -30,7 +30,6 @@ if the logged in user doesn't own the collection, show a card with a link to a "
         </Link>) 
 }
 
-
         </div>
     </section>
 )
