@@ -94,7 +94,7 @@ const handleEdit = (collectionTitle) =>{
     <>
       <div className="centertime">
       <h2 className="grayme" >"{collection.collectionTitle}"</h2>
-      <button className="centertime2" type="button" onClick={() =>
+      <button className="centertime3" type="button" onClick={() =>
              handleEdit()}>EDIT COLLECTION TITLE</button>
         <br />
         <img className="brdrme" src={collection.img} alt="collection" />
