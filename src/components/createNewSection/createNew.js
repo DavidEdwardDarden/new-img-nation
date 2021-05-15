@@ -1,6 +1,6 @@
 //I could seperat background images section and image elements section into seperate elements
 //I have chosen not to currently for time
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { addBackgrndimgs } from "../../data/uploadManager";
 import { addImgElements } from "../../data/uploadManager";
 import "./createNew.css";
@@ -9,10 +9,10 @@ import "../uploadSection/upload.css";
 export const CreateNew = () => {
   const [collectiontitle, setCollectionTitle] = useState({ collectionTitle: "" });
   const [loading, setLoading] = useState(false);
+  const [step1complete, setStep1Complete] = useState(false);
   const [image1, setImage1] = useState("");
   const [image2, setImage2] = useState("");
   const [image3, setImage3] = useState("");
-  const [imgelements, setimgelements] = useState({});
 const [newCollectionObject, setNewCollectionObject] = useState();
 
   //This section is about uploading an image to/from Cloudinary
@@ -104,6 +104,7 @@ const [newCollectionObject, setNewCollectionObject] = useState();
 
   //also stolen (and retooled) from Register.js (for reference)
   const handleCreateNew = (event) => {
+    if(image1 !== ""){
     //prevent refresh of form html element
     event.preventDefault();
     fetch("http://localhost:8088/collections", {
@@ -122,9 +123,14 @@ const [newCollectionObject, setNewCollectionObject] = useState();
        {
          setNewCollectionObject(newCollectionObj)
          console.log(newCollectionObj)
-         alert("Image will appear under PROFILE section.")
+         setStep1Complete(true)
+         alert("Excellent! Continue to STEP 2.")
         })
       //update state
+    }
+    else{
+alert("Choose an image to upload.")
+    }
   };
 
 
@@ -132,6 +138,7 @@ const [newCollectionObject, setNewCollectionObject] = useState();
 
   //Update the state of background image
   const saveImageToBackgroundImages = () => {
+    if(step1complete === true){
     const backgrndimg2save = {
       collectionId: parseInt(newCollectionObject.id),
       imgurl: image2
@@ -142,10 +149,15 @@ const [newCollectionObject, setNewCollectionObject] = useState();
       //puts the uploaded image in the dataset under backgrndimgs when the user chooses an image file
       addBackgrndimgs(backgrndimg2save);
     }
-    alert("Image will appear in PROFILE section under chosen collection.");
+    alert("Excellent! Continue to STEP 3.");
+  }
+  else{
+    alert("Please complete STEP 1 first.")
+  }
   };
 
   const saveImageToImageElements = () => {
+    if(step1complete === true){
     const imgelement2save = {
       collectionId: parseInt(newCollectionObject.id),
       imgurl: image3
@@ -156,16 +168,20 @@ const [newCollectionObject, setNewCollectionObject] = useState();
       //puts the uploaded image in the dataset under backgrndimgs when the user chooses an image file
       addImgElements(imgelement2save);
     }
-    alert("Image will appear in PROFILE section under chosen collection.");
+    alert("Continue to upload PNG images. When complete, go to PROFILE.");
+  }
+  else{
+    alert("Please complete STEP 1 first.")
+  }
   };
 
   return (
-    <div>
-    <div className="centerme">
-      <form className="formuplogin" onSubmit={handleCreateNew}>
+    <div className="stepContainer">
+    <div className="step1">
+      <form className="formuplogin2" onSubmit={handleCreateNew}>
         <h1 className="steps">STEP 1</h1>
         <hr className="underline"></hr>
-        <h3 className="tryit">Create a TITLE for your Composite Image.</h3>
+        <h5 className="tryit">Create a TITLE for your Composite Image.</h5>
         <fieldset className="designme">
           <label className="align" htmlFor="collectionTitle">
             {" "}
@@ -185,10 +201,10 @@ const [newCollectionObject, setNewCollectionObject] = useState();
 
         <br />
 
-        <h1 className="tryit">Upload your masterpiece.</h1>
+        <h3 className="tryit">Upload your masterpiece.</h3>
 
         <input
-          className="centerme"
+          className="centermenow"
           type="file"
           name="file"
           placeholder="Upload an image"
@@ -219,7 +235,7 @@ const [newCollectionObject, setNewCollectionObject] = useState();
         <div className="align">
           <button className="button2" type="submit">
             {" "}
-            Submit{" "}
+            SUBMIT{" "}
           </button>
         </div>
       </form>
@@ -236,13 +252,13 @@ const [newCollectionObject, setNewCollectionObject] = useState();
     </div>
 <br/>
 
-<div className="centerme">
+<div className="step2">
 <h1 className="steps" >STEP 2</h1>
 <hr className="underline"></hr>
 <h1 className="uploadtitle">Upload a Background Image</h1>
 
 <input
- className="centerme"
+ className="centermenow"
  type="file"
  name="file"
  placeholder="Upload an image"
@@ -269,17 +285,16 @@ const [newCollectionObject, setNewCollectionObject] = useState();
 )}
 
 <br />
-
-<div></div>
-<button className="centerme2" onClick={saveImageToBackgroundImages}>
- Submit
+<div className="align">
+<button className="button2" onClick={saveImageToBackgroundImages}>
+ SUBMIT
 </button>
-
+</div>
 <br />
 </div>
 <br/>
 
-<div className="centerme">
+<div className="step3">
       <h1 className="steps">STEP 3</h1>
       <hr className="underline"></hr>
       <h1 className="uploadtitle">Upload .PNG Images</h1>
@@ -292,7 +307,7 @@ const [newCollectionObject, setNewCollectionObject] = useState();
       <br />
 
       <input
-        className="centerme"
+        className="centermenow"
         type="file"
         name="file"
         placeholder="Upload an image"
@@ -320,11 +335,11 @@ const [newCollectionObject, setNewCollectionObject] = useState();
 
       <br></br>
 
-      <div></div>
-      <button className="centerme2" onClick={saveImageToImageElements}>
-        Submit
+      <div className="align">
+      <button className="button2" onClick={saveImageToImageElements}>
+        SUBMIT
       </button>
-
+</div>
       <br />
     </div>
     <br />

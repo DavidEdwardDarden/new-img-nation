@@ -31,6 +31,8 @@ export const CollectionList = () => {
 return (
   
     <div className="cardList">
+       <h1 className="tooeasy" >★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ </h1>
+      <img src= {require(`../images/eagleseal.png`).default} className="iconborder2" alt="user img"></img>
       {collections.map(collection =>
       <CollectionCard key={collection.id} collection={collection}/>
       )

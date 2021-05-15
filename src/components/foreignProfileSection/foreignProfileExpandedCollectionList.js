@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from "react";
 import {getCollectionByCollectionId} from "../../data/collectionManager";
-import { useParams, useHistory } from "react-router-dom";
-import {deleteBackgrndimgsByBackgroundImageId, deleteImgElementsByBackgroundImageId, 
-  getBackgrndimgsByCollectionId,getImgelementsByCollectionId, deleteCollectionById} from "../../data/profileManager";
-// import "./profileExpandedCollectionCard.css"
+import { useParams } from "react-router-dom";
+import { getBackgrndimgsByCollectionId,getImgelementsByCollectionId } from "../../data/profileManager";
 import "../profileSection/profileExpandedCollectionCard.css"
-// import "./upload.css";
 
 export const ForeignExpandedProfileCollectionList = () => {
   const { collectionId } = useParams();
   const [collection, setCollection] = useState({});
   const [imgelements, setImgelements] = useState([]);
   const [backgrndimgs, setBackgrndimgs] = useState([]);
-
-  const history = useHistory();
 
   const handleGetCollection = (id) => {
     getCollectionByCollectionId(id).then((response) => {
@@ -33,50 +28,6 @@ export const ForeignExpandedProfileCollectionList = () => {
       setBackgrndimgs(response);
     });
   };
-
-
-const handleDeleteBackgroundImages = (id, collectionId) => {
-  console.log("click")
-  //deletes a background image by the id of the background image 
-  //that the user clicks the delete button under
-  // debugger
-  deleteBackgrndimgsByBackgroundImageId(id)
-  //"anonynous function" ()=>
-  .then(()=> handleGetBackgroundImages(collectionId))
-    //"callback function" example:
-  // .then( handleGetBackgroundImages)
-  //"callback function" example:
-  // .then( ()=>handleGetBackgroundImages())
-    
-}
-
-
-
-const handleDeleteImageElements = (id, collectionId) => {
-  //deletes a background image by the id of the background image 
-  //that the user clicks the delete button under
-  deleteImgElementsByBackgroundImageId(id)
-  
-     .then(()=>handleGetImgElement(collectionId))
-  
-}
-
-
-const handleDeleteCollection = (id) => {
-  
-  if (window.confirm("Are you sure you want to delete this collection?")){
-  deleteCollectionById(id)
-.then(()=>
-history.push("/profile")
-)
-  }
-}
-
-// console.log(collectionId)
-const handleEdit = (collectionTitle) =>{
-  history.push(`/edittitle/${collectionId}`)
-}
-
 
 
   useEffect(() => {
