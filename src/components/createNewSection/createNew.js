@@ -231,7 +231,6 @@ alert("Choose an image to upload.")
         )}
         <br />
 
-
         <div className="align">
           <button className="button2" type="submit">
             {" "}
