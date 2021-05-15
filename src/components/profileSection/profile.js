@@ -29,8 +29,13 @@ const {userId} = useParams();
 
   return (
    <div>
+     {/* <h1 className="tooeasy" >★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ </h1> */}
+      {/* <img src= {require(`../images/eagleseal.png`).default} className="iconborder2" alt="user img"></img> */}
+    
      <h2 className="nationmember"> Nation Member Identification:</h2>
      <h1 className="usernamelook">"{user.userName}"</h1>
+     {/* <h1>★ ★ ★ ★ ★ ★ ★ ★ ★ ★</h1> */}
+    
      {user.img ? <img src= {require(`../images/${user.img}`).default} className="iconborder" alt="user img"></img> : <p className="centermessage">Image not found</p>}
      <br/>
      <br/>

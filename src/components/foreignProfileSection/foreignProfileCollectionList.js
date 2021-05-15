@@ -1,10 +1,12 @@
 // get a list of all the logged in user's collections
 import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import { ForeignProfileCollectionCard } from './foreignProfileCollectionCard';
 import { getAllCollections} from '../../data/collectionManager';
 
+
 export const ForeignProfileCollectionList = () => {
-    // The initial state is an empty array
+    const {userId} = useParams();
     const [collections, setCollections] = useState([]);
     
     //returns all collection objects and stores in updated state
@@ -27,12 +29,11 @@ export const ForeignProfileCollectionList = () => {
   //Displays collectionCards of logged in user
 const collectionCards = () => {
     const allCollectionCards = collections.map(collection => {
-      //if the logged in user's id matches the id of user with a collection
-     if( parseInt(sessionStorage.getItem("nation_user")) !== collection.userId){
+    //I see that this should not be like this BUT!...
+    //
+     if( userId == collection.userId){
       
-       //return the collections that match the user
       return <ForeignProfileCollectionCard key={collection.id} 
-    //   handleDeleteFriend={handleDeleteFriend} 
       collection={collection}  />
      }
      else{

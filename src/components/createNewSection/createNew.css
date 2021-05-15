@@ -1,3 +1,7 @@
+/* * {
+    border: solid red 2px;
+} */
+
 .senter{
     display: flex;
     flex-wrap: nowrap;
@@ -11,7 +15,8 @@
     flex-wrap: nowrap;
     justify-content: center;
     color:rgb(61, 60, 60);
-    font-size: 750%;
+    font-size: 200%;
+    margin: 5px;
 }
 
 .example{
@@ -25,9 +30,9 @@
 .tryit{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
     width: 100%;
     color:rgb(61, 60, 60);
+    justify-content: center;
 }
 
 .align{
@@ -35,7 +40,7 @@
     /* flex-wrap: nowrap; */
     justify-content: center;
     /* width: 100%; */
-    font-size: 190%;
+    font-size: 100%;
     font-weight: bold;
     color:rgb(61, 60, 60);
 }
@@ -49,15 +54,80 @@
 
 
     .button2 {
-
-        background-color: #555555;
+font-weight: bold;
+        background-color: #ce2727;
         color: rgb(255, 255, 255);
         border: solid 1.5px rgb(44, 42, 42);
-        width: 15%;
-        border-radius: 8%;
+        width: 30%;
+        border-radius: 5%;
+        height: 30px;
       }
     
       .button2:hover{
-        background-color: #828382; /* Green */
+        background-color: #ff0000; /* Green */
       color: rgb(255, 255, 255);
       }
+
+      .step1{
+        /* text-align: center; */
+        display: block;
+        margin: 10px;
+        width: 28%;
+        /* border: 3px solid green; */
+        padding: 5px;
+         border:rgb(83, 81, 81) solid 10px;
+        justify-content: flex-start;
+    }
+
+    .step2{
+        /* text-align: center; */
+        display: block;
+        margin: 10px;
+        width: 28%;
+        /* border: 3px solid green; */
+        padding: 5px;
+         border:rgb(83, 81, 81) solid 10px;
+         justify-content: center;
+    }
+
+    .step3{
+        /* text-align: center; */
+        display: block;
+        margin: 10px;
+        width: 28%;
+        /* border: 3px solid green; */
+        padding: 5px;
+         border:rgb(83, 81, 81) solid 10px;
+         /* float: right; */
+         justify-content: flex-end;
+    }
+
+    .stepContainer{
+        display: flex;
+        /* display: block; */
+        /* margin: auto; */
+        padding-bottom: 30px;
+    }
+
+    .formuplogin2{
+        display: flex;
+      flex-wrap: wrap;
+      /* justify-content: center;  */
+      /* min-width:1000px;  */
+      flex-direction: column;
+      /* margin: auto; */
+      /* width: 90%; */
+      /* border: 3px solid green; */
+      padding-bottom: 10px;
+      /* text-align: center; */
+    }
+
+    .centermenow{
+        /* text-align: center; */
+        display: block;
+        margin: auto;
+        width: 60%;
+        /* border: 3px solid green; */
+        padding: 10px;
+         border:rgb(83, 81, 81) solid 10px;
+    }
