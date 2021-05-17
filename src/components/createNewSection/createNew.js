@@ -10,6 +10,7 @@ export const CreateNew = () => {
   const [collectiontitle, setCollectionTitle] = useState({ collectionTitle: "" });
   const [loading, setLoading] = useState(false);
   const [step1complete, setStep1Complete] = useState(false);
+  const [backgrounduploaded, setBackgroundUploadedComplete] = useState(false);
   const [image1, setImage1] = useState("");
   const [image2, setImage2] = useState("");
   const [image3, setImage3] = useState("");
@@ -104,6 +105,7 @@ const [newCollectionObject, setNewCollectionObject] = useState();
 
   //also stolen (and retooled) from Register.js (for reference)
   const handleCreateNew = (event) => {
+    if(step1complete !== true){
     if(image1 !== ""){
     //prevent refresh of form html element
     event.preventDefault();
@@ -131,6 +133,10 @@ const [newCollectionObject, setNewCollectionObject] = useState();
     else{
 alert("Choose an image to upload.")
     }
+  }
+  else{
+    alert("Move on to STEP 2.")
+  }
   };
 
 
@@ -138,6 +144,7 @@ alert("Choose an image to upload.")
 
   //Update the state of background image
   const saveImageToBackgroundImages = () => {
+    if(backgrounduploaded !== true){
     if(step1complete === true){
     const backgrndimg2save = {
       collectionId: parseInt(newCollectionObject.id),
@@ -149,11 +156,16 @@ alert("Choose an image to upload.")
       //puts the uploaded image in the dataset under backgrndimgs when the user chooses an image file
       addBackgrndimgs(backgrndimg2save);
     }
+    setBackgroundUploadedComplete(true)
     alert("Excellent! Continue to STEP 3.");
   }
   else{
     alert("Please complete STEP 1 first.")
   }
+}
+else{
+  alert("Move on to STEP 3.")
+}
   };
 
   const saveImageToImageElements = () => {
@@ -181,9 +193,9 @@ alert("Choose an image to upload.")
       <form className="formuplogin2" onSubmit={handleCreateNew}>
         <h1 className="steps">STEP 1</h1>
         <hr className="underline"></hr>
-        <h5 className="tryit">Create a TITLE for your Composite Image.</h5>
+        <h2 className="tryit">Create a TITLE for your Composite Image.</h2>
         <fieldset className="designme">
-          <label className="align" htmlFor="collectionTitle">
+          <label className="align22" htmlFor="collectionTitle">
             {" "}
             TITLE:{" "}
           </label>
@@ -231,7 +243,7 @@ alert("Choose an image to upload.")
         )}
         <br />
 
-        <div className="align">
+        <div className="alignbottom">
           <button className="button2" type="submit">
             {" "}
             SUBMIT{" "}

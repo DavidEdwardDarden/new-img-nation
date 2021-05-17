@@ -30,8 +30,12 @@ export const ForeignProfileCollectionList = () => {
 const collectionCards = () => {
     const allCollectionCards = collections.map(collection => {
     //I see that this should not be like this BUT!...
-    //
-     if( userId == collection.userId){
+    //It works
+    console.log(9)
+    console.log("9")
+    console.log(userId)
+    console.log(collection.userId)
+     if( userId == parseInt(collection.userId)){
       
       return <ForeignProfileCollectionCard key={collection.id} 
       collection={collection}  />

@@ -6,7 +6,7 @@ export const About = () => {
   return (
     <section>
       <div>
-        <h2 className="abouttitle">About</h2>
+        <h2 className="abouttitle">★ About ★</h2>
         <p className="parag">
           New Image Nation uses images as a medium to streamline the creation 
           of new composite imagery. Creating imagery from scratch takes a lot of time 

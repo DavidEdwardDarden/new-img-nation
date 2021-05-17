@@ -44,6 +44,7 @@ display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     color: rgb(68, 65, 65);
+    margin: 5px;
 }
 
 .iconborder{
@@ -57,7 +58,7 @@ display: flex;
 
 .iconborder2{
   
-    width: 20%;
+    width: 15%;
     display: block;
     margin-left: auto;
     margin-right: auto;

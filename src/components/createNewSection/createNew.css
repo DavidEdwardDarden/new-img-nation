@@ -24,15 +24,18 @@
     flex-wrap: nowrap;
     justify-content: center;
     width: 100%;
-    border: solid rgb(39, 38, 38) 2px;
+    border: solid rgb(53, 52, 52) 2px;
 }
 
 .tryit{
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    color:rgb(61, 60, 60);
+    color:rgb(78, 78, 78);
     justify-content: center;
+    margin: 5px;
+    text-align: center;
+    opacity: 90%;
 }
 
 .align{
@@ -43,6 +46,31 @@
     font-size: 100%;
     font-weight: bold;
     color:rgb(61, 60, 60);
+    margin-top: 90px;
+}
+
+.alignbottom{
+    display: flex;
+    /* flex-wrap: nowrap; */
+    justify-content: center;
+    /* width: 100%; */
+    font-size: 100%;
+    font-weight: bold;
+    color:rgb(61, 60, 60);
+    margin-top: 40px;
+     margin-bottom: 40px;
+}
+
+.align22{
+    display: flex;
+    /* flex-wrap: nowrap; */
+    justify-content: center;
+    /* width: 100%; */
+    font-size: 100%;
+    font-weight: bold;
+    color:rgb(61, 60, 60);
+    margin-top: 4px;
+    /* margin-bottom: 10px; */
 }
 
 .form-control{
@@ -130,4 +158,10 @@ font-weight: bold;
         /* border: 3px solid green; */
         padding: 10px;
          border:rgb(83, 81, 81) solid 10px;
+    }
+
+    .designme7{
+        background-color:rgba(128, 126, 126, 0.5);
+        width:90%;
+        height: 1%;
     }

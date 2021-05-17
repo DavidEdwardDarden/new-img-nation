@@ -3,6 +3,8 @@
     text-align: center;
     color: rgb(49, 49, 49);
     text-shadow: 6px 6px 10px rgb(63, 62, 62);
+    margin: 2px;
+    /* padding: 10px; */
 }
 
 .underline{
@@ -16,6 +18,6 @@
     opacity: 0.5;
 }
 
-/* .logobox{
-    height: 20%;
-} */
+.logobox{
+    margin: 2px;
+}

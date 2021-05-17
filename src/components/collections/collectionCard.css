@@ -1,7 +1,12 @@
 .title{
     color:rgb(54, 53, 53);
     font-size: 180%;
+    margin: 5px;
 }
+
+.title:hover{
+    transform: scale(1.015);
+    }
 
 .attempt{
     width: 80%;
@@ -11,11 +16,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 90%;
+    width: 95.5%;
 }
 
-.brdrme{
+/* .brdrme{
     border: solid 4px rgb(58, 57, 57);
-}
+} */
+
+/* .borderme3{
+    border: rgb(53, 51, 51) 3px solid;
+} */
 
 
