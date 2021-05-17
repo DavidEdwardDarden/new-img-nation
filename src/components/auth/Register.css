@@ -31,6 +31,12 @@
 
 .designme{
     background-color:rgba(128, 126, 126, 0.5);
+    width:90%;
+}
+
+.designme2{
+  background-color:rgba(128, 126, 126, 0.5);
+  width:90%;
 }
 
 .redbox{

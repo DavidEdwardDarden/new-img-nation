@@ -1,6 +1,12 @@
+/* * {
+    border: solid red 2px;
+} */
+
 .cardList{
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     overflow-wrap: wrap;
     justify-content: center;
+    width: 100%;
     }

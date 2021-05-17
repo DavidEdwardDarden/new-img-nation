@@ -22,11 +22,14 @@ if the logged in user doesn't own the collection, show a card with a link to a "
 */}
         
 {parseInt(sessionStorage.getItem("nation_user")) === collection.userId ? (<a href="/profile">
-<h1 className="title">"{collection.collectionTitle}" ★</h1>
-            <img className="brdrme" src= {collection.img} alt="collection"></img>
+
+<h1 className="title">★ "{collection.collectionTitle}" ★</h1>
+<div className="borderme3">
+            <img className="brdrme" src= {collection.img} alt="collection"></img></div>
         </a>) : (<Link to={goHere}>
             <h1 className="title">"{collection.collectionTitle}"</h1>
-            <img className="brdrme" src= {collection.img} alt="collection"/>
+            <div className="borderme3">
+            <img className="brdrme" src= {collection.img} alt="collection"/></div>
         </Link>) 
 }
 
